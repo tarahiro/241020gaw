@@ -32,27 +32,28 @@ namespace gaw241020.Character {
             while (true)
             {
                 await UniTask.WaitUntil(() => WaitInput());
+                await UniTask.WaitUntil(() => !characterView.isMoving);
             }
         }
 
         bool WaitInput()
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 characterModel.Walk(Vector2Int.up);
                 return true;
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 characterModel.Walk(Vector2Int.right);
                 return true;
             }
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.DownArrow))
             {
                 characterModel.Walk(Vector2Int.down);
                 return true;
             }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 characterModel.Walk(Vector2Int.left);
                 return true;

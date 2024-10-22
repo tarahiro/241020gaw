@@ -8,5 +8,7 @@ namespace gaw241020.Character {
     public interface ICharacterView
     {
         UniTask Move(Vector2Int vector2Int);
+
+        bool isMoving { get; }
     }
 }
