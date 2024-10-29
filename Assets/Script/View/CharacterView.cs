@@ -34,9 +34,8 @@ namespace gaw241020.View {
                 walkSecondsPerTile /= 5f;
             }
 #endif
-
-
             await LMotion.Create(m_characterTransform.position, new Vector3(destination.x, destination.y), walkSecondsPerTile).BindToPosition(m_characterTransform);
+
             isMoving = false;
         }
     }

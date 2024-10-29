@@ -5,9 +5,10 @@ using Cysharp.Threading.Tasks;
 using gaw241020;
 using UniRx;
 using Zenject;
+using Tarahiro;
 
 namespace gaw241020.Presenter {
-    public class CharacterPresenter : ICharacterPresenter
+    public class CharacterPresenter : ICharacterPresenter, ICharacterCollisionPresenter
     {
         [Inject]
         ICharacterModel characterModel;
@@ -15,6 +16,8 @@ namespace gaw241020.Presenter {
         ICharacterView characterView;
         [Inject]
         IGridModel gridModel;
+
+        GameObject m_TouchedTownObjectCache;
 
         public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView)
         {
@@ -76,6 +79,22 @@ namespace gaw241020.Presenter {
                 return false;
             }
 
+        }
+
+        public void EnterCharacterToTown(GameObject townObject)
+        {
+            Debug.Log("キャラクターがTownに触れたことをPresenterで取得");
+
+            Log.DebugAssert(m_TouchedTownObjectCache == null);
+            m_TouchedTownObjectCache = townObject;
+        }
+
+        public void ExitCharacterFromTown(GameObject townObject)
+        {
+            Debug.Log("キャラクターがTownから離れたことをPresenterで取得");
+
+            Log.DebugAssert(m_TouchedTownObjectCache == townObject);
+            m_TouchedTownObjectCache = null;
         }
     }
 }
