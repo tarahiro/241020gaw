@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Tarahiro;
 using Zenject;
 using UnityEngine.Tilemaps;
 using gaw241020.Presenter;
 
 namespace gaw241020.View
 {
-    public class GridMonoBehaviourReader : MonoBehaviour,IGridMonoBehaviourReader
+    public class GridMonoBehaviourReader : MonoBehaviour,IGridReader
     {
-        
         [SerializeField]
-        private Grid m_Grid;
+        Grid m_Grid;
 
         Tilemap[] m_TilemapArray;
 
 
-        public void FindTilemap()
+        void ReadTilemap()
         {
-            Debug.Log("ヒエラルキーから読み込み");
+            Log.DebugLog("ヒエラルキーからタイルマップを読み込み");
 
-            Debug.LogAssertion(m_Grid);
+            Log.DebugAssert(m_Grid != null);
             m_TilemapArray = m_Grid.GetComponentsInChildren<Tilemap>();
         }
 
@@ -31,9 +31,9 @@ namespace gaw241020.View
 
             if(m_TilemapArray == null)
             {
-                FindTilemap();
+                ReadTilemap();
             }
-            Debug.LogAssertion(m_TilemapArray);
+            Log.DebugAssert(m_TilemapArray != null);
             return m_TilemapArray.ToList();
         }
 

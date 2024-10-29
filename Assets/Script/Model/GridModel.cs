@@ -13,7 +13,7 @@ namespace gaw241020.Model
 
         List<Tilemap> m_TilemapList;
 
-        public GridModel(IGridMonoBehaviourReader gridMonoBehaviourReader)
+        public GridModel(IGridReader gridMonoBehaviourReader)
         {
             m_TilemapList = gridMonoBehaviourReader.GetTilemaps();
         }
