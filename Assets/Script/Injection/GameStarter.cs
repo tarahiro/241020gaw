@@ -10,6 +10,7 @@ using gaw241020.Presenter;
 
 public class GameStarter : MonoInstaller
 {
+    [SerializeField] SpriteInformationContainer spriteInformationContainer;
 
     public override void InstallBindings()
     {
@@ -18,6 +19,7 @@ public class GameStarter : MonoInstaller
         Container.BindInterfacesTo<CharacterPresenter>().AsSingle();
         Container.BindInterfacesTo<ExploreState>().AsSingle();
         Container.BindInterfacesTo<GridMonoBehaviourReader>().FromComponentInHierarchy().AsSingle();
+        Container.BindInstance(spriteInformationContainer);
         Container.BindInterfacesTo<GridModel>().AsSingle();
         Container.Bind<GameManager>().AsSingle().NonLazy();
     }

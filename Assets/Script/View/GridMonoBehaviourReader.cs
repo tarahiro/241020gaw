@@ -34,6 +34,7 @@ namespace gaw241020.View
                 ReadTilemap();
             }
             Log.DebugAssert(m_TilemapArray != null);
+            Log.DebugAssert(m_TilemapArray.Length > 0);
             return m_TilemapArray.ToList();
         }
 
