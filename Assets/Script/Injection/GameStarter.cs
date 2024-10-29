@@ -14,6 +14,8 @@ public class GameStarter : MonoInstaller
 
     public override void InstallBindings()
     {
+        Container.BindInterfacesTo<LocationMasterDataProvider>().AsSingle();
+        Container.BindInterfacesTo<LocationModel>().AsSingle();
         Container.BindInterfacesTo<CharacterModel>().AsSingle();
         Container.BindInterfacesTo<CharacterCollider>().FromComponentInHierarchy().AsSingle();
         Container.BindInterfacesTo<CharacterView>().AsSingle();

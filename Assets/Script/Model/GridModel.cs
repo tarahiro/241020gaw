@@ -12,6 +12,8 @@ namespace gaw241020.Model
     public class GridModel : IGridModel
     {
 
+        ILocationMasterDataProvider m_LocationMasterDataProvider;
+
         List<Tilemap> m_TilemapList;
         int m_GroundLayer;
 
@@ -19,8 +21,10 @@ namespace gaw241020.Model
         List<Sprite> UnShipableTileList;
 
 
-        public GridModel(IGridReader gridMonoBehaviourReader, SpriteInformationContainer spriteInformationContainer)
+        public GridModel(IGridReader gridMonoBehaviourReader, SpriteInformationContainer spriteInformationContainer, ILocationMasterDataProvider locationMasterDataProvider)
         {
+            m_LocationMasterDataProvider = locationMasterDataProvider;
+
             m_TilemapList = gridMonoBehaviourReader.GetTilemaps();
             UnWalkableTileList = spriteInformationContainer.GetUnWalkableTileList();
             UnShipableTileList = spriteInformationContainer.GetUnShipableTileList();

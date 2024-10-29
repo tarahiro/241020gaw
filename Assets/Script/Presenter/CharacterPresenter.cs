@@ -16,10 +16,12 @@ namespace gaw241020.Presenter {
         ICharacterView characterView;
         [Inject]
         IGridModel gridModel;
+        [Inject]
+        ILocationModel locationModel;
 
         GameObject m_TouchedTownObjectCache;
 
-        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView)
+        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, ILocationModel locationModel)
         {
             characterModel.Moved.Subscribe(MoveCharacterView);
         }
@@ -87,6 +89,7 @@ namespace gaw241020.Presenter {
 
             Log.DebugAssert(m_TouchedTownObjectCache == null);
             m_TouchedTownObjectCache = townObject;
+            Log.DebugLog(locationModel.GetLocationDescription(townObject.name));
         }
 
         public void ExitCharacterFromTown(GameObject townObject)
