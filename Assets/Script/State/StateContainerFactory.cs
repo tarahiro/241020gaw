@@ -14,11 +14,6 @@ namespace gaw241020.State
 
         IStateContainer m_StateContainer;
 
-        public StateContainerFactory(CharacterState characterState)
-        {
-            m_CharacterState = characterState;
-        }
-
         public IStateContainer CreateStateContainer()
         {
             Log.DebugAssert(m_StateContainer == null);

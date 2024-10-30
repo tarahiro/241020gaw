@@ -18,11 +18,10 @@ namespace gaw241020
 
         IStateContainer m_StateContainer;
 
-        public GameManager(IStateMachine stateMachie, IStateContainerFactory stateContainerFactory)
+        public GameManager(IStateMachine stateMachine, IStateContainerFactory stateContainerFactory)
         {
+            m_StateMachine = stateMachine;
 
-            m_StateMachine = stateMachie;
-            m_StateContainerFactory = stateContainerFactory;
 
             m_StateContainer =  stateContainerFactory.CreateStateContainer();
             m_StateMachine.SetNextState(m_StateContainer.GetCharacterState);

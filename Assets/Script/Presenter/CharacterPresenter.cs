@@ -11,7 +11,7 @@ namespace gaw241020.Presenter
     public class CharacterPresenter : ICharacterPresenter, ICharacterCollisionPresenter
     {
         [Inject]
-        ICharacterModel characterModel;
+        ICharacterModel m_CharacterModel;
         [Inject]
         ICharacterView characterView;
         [Inject]
@@ -21,6 +21,7 @@ namespace gaw241020.Presenter
 
         public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, IStateChanger stateChanger)
         {
+            m_CharacterModel = characterModel;
             characterModel.Moved.Subscribe(MoveCharacterView);
         }
 
@@ -36,7 +37,7 @@ namespace gaw241020.Presenter
             {
                 await UniTask.WaitUntil(() => WaitInput());
                 await UniTask.WaitUntil(() => !characterView.isMoving);
-                if (characterModel.IsTouchingLocationExist)
+                if (m_CharacterModel.IsTouchingLocationExist)
                 {
                     Log.DebugLog("Talk");
 //                    stateChanger.ChangeStateToTalk();
@@ -78,9 +79,9 @@ namespace gaw241020.Presenter
 
         bool TryWalk(Vector2Int direction)
         {
-            if(gridModel.IsWalkable(characterModel.CharacterPosition + direction))
+            if(gridModel.IsWalkable(m_CharacterModel.CharacterPosition + direction))
             {
-                characterModel.Walk(direction);
+                m_CharacterModel.Walk(direction);
                 return true;
 
             }
@@ -95,14 +96,14 @@ namespace gaw241020.Presenter
         {
             Debug.Log("キャラクターがTownに触れたことをPresenterで取得");
 
-            characterModel.EnterCharacterToLocation(townObject.name);
+            m_CharacterModel.EnterCharacterToLocation(townObject.name);
         }
 
         public void ExitCharacterFromLocation(GameObject townObject)
         {
             Debug.Log("キャラクターがTownから離れたことをPresenterで取得");
 
-            characterModel.ExitCharacterFromLocation(townObject.name);
+            m_CharacterModel.ExitCharacterFromLocation(townObject.name);
         }
     }
 }
