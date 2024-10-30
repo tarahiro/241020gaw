@@ -7,6 +7,7 @@ using gaw241020;
 using gaw241020.View;
 using gaw241020.Model;
 using gaw241020.Presenter;
+using gaw241020.State;
 
 public class GameStarter : MonoInstaller
 {
@@ -20,7 +21,10 @@ public class GameStarter : MonoInstaller
         Container.BindInterfacesTo<CharacterCollider>().FromComponentInHierarchy().AsSingle();
         Container.BindInterfacesTo<CharacterView>().AsSingle();
         Container.BindInterfacesTo<CharacterPresenter>().AsSingle();
-        Container.BindInterfacesTo<ExploreState>().AsSingle();
+        Container.BindInterfacesAndSelfTo<CharacterState>().AsSingle();
+        Container.BindInterfacesTo<StateMachine>().AsSingle();
+        Container.BindInterfacesTo<StateChanger>().AsSingle();
+        Container.BindInterfacesTo<StateContainerFactory>().AsSingle();
         Container.BindInterfacesTo<GridMonoBehaviourReader>().FromComponentInHierarchy().AsSingle();
         Container.BindInstance(spriteInformationContainer);
         Container.BindInterfacesTo<GridModel>().AsSingle();

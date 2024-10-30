@@ -11,14 +11,23 @@ namespace gaw241020
     public class GameManager
     {
         [Inject]
-        IExploreState exploreState;
+        IStateContainerFactory m_StateContainerFactory;
 
-        public GameManager(IExploreState exploreState)
+        [Inject]
+        IStateMachine m_StateMachine;
+
+        IStateContainer m_StateContainer;
+
+        public GameManager(IStateMachine stateMachie, IStateContainerFactory stateContainerFactory)
         {
-            Debug.Log("GameManagerê∂ê¨");
 
-            exploreState.Enter().Forget();
+            m_StateMachine = stateMachie;
+            m_StateContainerFactory = stateContainerFactory;
 
+            m_StateContainer =  stateContainerFactory.CreateStateContainer();
+            m_StateMachine.SetNextState(m_StateContainer.GetCharacterState);
+
+            m_StateMachine.Enter().Forget();
         }
 
     }

@@ -12,6 +12,14 @@ namespace gaw241020.Presenter{
 
         Vector2Int CharacterPosition { get; }
 
+        String TouchingLocationId { get; }
+
         void Walk(Vector2Int direction);
+        
+        void EnterCharacterToLocation(string locationName);
+
+        void ExitCharacterFromLocation(string locationName);
+
+        bool IsTouchingLocationExist { get; }
     }
 }

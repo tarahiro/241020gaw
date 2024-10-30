@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Cysharp.Threading.Tasks;
-using gaw241020;
 using UniRx;
+using UnityEngine;
 using Zenject;
+using gaw241020.State;
+using gaw241020;
 using Tarahiro;
 
-namespace gaw241020.Presenter {
+namespace gaw241020.Presenter
+{
     public class CharacterPresenter : ICharacterPresenter, ICharacterCollisionPresenter
     {
         [Inject]
@@ -15,13 +15,11 @@ namespace gaw241020.Presenter {
         [Inject]
         ICharacterView characterView;
         [Inject]
-        IGridModel gridModel;
+        IStateChanger stateChanger;
         [Inject]
-        ILocationModel locationModel;
+        IGridModel gridModel;
 
-        GameObject m_TouchedTownObjectCache;
-
-        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, ILocationModel locationModel)
+        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, IStateChanger stateChanger)
         {
             characterModel.Moved.Subscribe(MoveCharacterView);
         }
@@ -31,16 +29,26 @@ namespace gaw241020.Presenter {
             characterView.Move(vector2Int);
         }
 
-
-
         public async UniTask Enter()
         {
-            Debug.Log("キャラ移動開始");
+            Log.DebugLog("キャラ移動開始");
             while (true)
             {
                 await UniTask.WaitUntil(() => WaitInput());
                 await UniTask.WaitUntil(() => !characterView.isMoving);
+                if (characterModel.IsTouchingLocationExist)
+                {
+                    Log.DebugLog("Talk");
+//                    stateChanger.ChangeStateToTalk();
+                }
             }
+        }
+
+        IStateContainer m_StateContainer;
+
+        public void SetStateContainer(IStateContainer stateContainer)
+        {
+            m_StateContainer = stateContainer;
         }
 
         bool WaitInput()
@@ -83,21 +91,18 @@ namespace gaw241020.Presenter {
 
         }
 
-        public void EnterCharacterToTown(GameObject townObject)
+        public void EnterCharacterToLocation(GameObject townObject)
         {
             Debug.Log("キャラクターがTownに触れたことをPresenterで取得");
 
-            Log.DebugAssert(m_TouchedTownObjectCache == null);
-            m_TouchedTownObjectCache = townObject;
-            Log.DebugLog(locationModel.GetLocationDescription(townObject.name));
+            characterModel.EnterCharacterToLocation(townObject.name);
         }
 
-        public void ExitCharacterFromTown(GameObject townObject)
+        public void ExitCharacterFromLocation(GameObject townObject)
         {
             Debug.Log("キャラクターがTownから離れたことをPresenterで取得");
 
-            Log.DebugAssert(m_TouchedTownObjectCache == townObject);
-            m_TouchedTownObjectCache = null;
+            characterModel.ExitCharacterFromLocation(townObject.name);
         }
     }
 }

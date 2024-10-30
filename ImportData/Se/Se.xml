@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-10-08T12:58:21Z</LastSaved>
+  <LastSaved>2024-10-29T08:30:32Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -20,8 +20,9 @@
    <Path> </Path>
    <SheetName> </SheetName>
   </SupBook>
-  <WindowHeight>10160</WindowHeight>
-  <WindowWidth>19360</WindowWidth>
+  <WindowIconic/>
+  <WindowHeight>10080</WindowHeight>
+  <WindowWidth>28580</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -151,8 +152,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>10</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>7</ActiveRow>
+     <ActiveCol>10</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

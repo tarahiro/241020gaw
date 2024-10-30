@@ -21,13 +21,13 @@ namespace gaw241020.View
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            m_CharacterCollisionPresenter.EnterCharacterToTown(collision.gameObject);
+            m_CharacterCollisionPresenter.EnterCharacterToLocation(collision.gameObject);
 
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            m_CharacterCollisionPresenter.ExitCharacterFromTown(collision.gameObject);
+            m_CharacterCollisionPresenter.ExitCharacterFromLocation(collision.gameObject);
         }
     }
 }
