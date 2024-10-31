@@ -12,17 +12,25 @@ namespace gaw241020.Presenter
     {
         [Inject]
         ICharacterModel m_CharacterModel;
+
         [Inject]
         ICharacterView characterView;
+
         [Inject]
         IStateChanger stateChanger;
+
         [Inject]
         IGridModel gridModel;
 
-        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, IStateChanger stateChanger)
+      //  [Inject]
+        ICharacterInputView m_CharacterInputView;
+
+        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, IGridModel gridModel, ICharacterInputView characterInputView, IStateChanger stateChanger)
         {
             m_CharacterModel = characterModel;
             characterModel.Moved.Subscribe(MoveCharacterView);
+
+            m_CharacterInputView = characterInputView;
         }
 
         void MoveCharacterView(Vector2Int vector2Int)
@@ -30,19 +38,32 @@ namespace gaw241020.Presenter
             characterView.Move(vector2Int);
         }
 
+        bool m_IsLoop = true;
+
         public async UniTask Enter()
         {
-            Log.DebugLog("キャラ移動開始");
-            while (true)
+            StateStart();
+            while (m_IsLoop)
             {
-                await UniTask.WaitUntil(() => WaitInput());
-                await UniTask.WaitUntil(() => !characterView.isMoving);
-                if (m_CharacterModel.IsTouchingLocationExist)
-                {
-                    Log.DebugLog("Talk");
-//                    stateChanger.ChangeStateToTalk();
-                }
+                await StateMainLoop();
             }
+            StateExit();
+        }
+
+        void StateStart()
+        {
+            Log.DebugLog("キャラクター操作開始処理");
+            m_IsLoop = true;
+            CheckIsLocationTouched();
+        }
+
+        async UniTask StateMainLoop()
+        {
+            Log.DebugLog("キャラクター操作ープ処理");
+            await UniTask.WaitUntil(() => WaitInput());
+            await UniTask.WaitUntil(() => !characterView.isMoving);
+
+            CheckIsLocationTouched();
         }
 
         IStateContainer m_StateContainer;
@@ -52,6 +73,15 @@ namespace gaw241020.Presenter
             m_StateContainer = stateContainer;
         }
 
+
+        void StateExit()
+        {
+            Log.DebugLog("キャラクター操作終了処理");
+            if (m_CharacterInputView.IsDecideGuideDisplayed)
+            {
+                m_CharacterInputView.EraseDecideGuide();
+            }
+        }
         bool WaitInput()
         {
             if (Input.GetKey(KeyCode.UpArrow))
@@ -74,6 +104,11 @@ namespace gaw241020.Presenter
                 TryWalk(Vector2Int.left);
                 return true;
             }
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                TryTalk();
+                return true;
+            }
             return false;
         }
 
@@ -91,6 +126,43 @@ namespace gaw241020.Presenter
             }
 
         }
+
+        bool TryTalk()
+        {
+            if (m_CharacterModel.IsTouchingLocationExist)
+            {
+                //Talkへ遷移
+                stateChanger.ChangeState(m_StateContainer.GetTalkState);
+                EndLoop();
+                return true;
+            }
+            return false;
+        }
+
+        void EndLoop()
+        {
+            m_IsLoop = false;
+        }
+
+        void CheckIsLocationTouched()
+        {
+            if (m_CharacterModel.IsTouchingLocationExist)
+            {
+                if (!m_CharacterInputView.IsDecideGuideDisplayed)
+                {
+                    m_CharacterInputView.ShowDecideGuide();
+                }
+            }
+            else
+            {
+                if (m_CharacterInputView.IsDecideGuideDisplayed)
+                {
+                    m_CharacterInputView.EraseDecideGuide();
+                }
+            }
+
+        }
+
 
         public void EnterCharacterToLocation(GameObject townObject)
         {

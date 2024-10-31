@@ -6,6 +6,6 @@ namespace gaw241020
     public interface IStateContainer
     {
         IState GetCharacterState { get; }
-      //  IState GetTalkState { get; }
+        IState GetTalkState { get; }
     }
 }

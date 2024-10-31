@@ -12,13 +12,18 @@ namespace gaw241020.State
         [Inject]
         CharacterState m_CharacterState;
 
+        [Inject]
+        TalkState m_TalkState;
+
         IStateContainer m_StateContainer;
 
         public IStateContainer CreateStateContainer()
         {
             Log.DebugAssert(m_StateContainer == null);
 
-           return new StateContainer(m_CharacterState);
+           return new StateContainer(m_CharacterState,m_TalkState);
         }
+
+
     }
 }
