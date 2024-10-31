@@ -24,6 +24,7 @@ public class GameStarter : MonoInstaller
         Container.BindInterfacesTo<CharacterInputView>().FromComponentInHierarchy().AsSingle();
         Container.BindInterfacesTo<CharacterView>().AsSingle();
         Container.BindInterfacesTo<CharacterPresenter>().AsSingle();
+        Container.BindInterfacesTo<CommandFactory>().AsSingle();
         Container.Bind<CharacterState>().AsSingle();
 
         Container.BindInterfacesTo<TalkPresenter>().AsSingle();

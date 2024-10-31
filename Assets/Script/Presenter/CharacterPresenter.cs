@@ -14,18 +14,23 @@ namespace gaw241020.Presenter
         ICharacterModel m_CharacterModel;
 
         [Inject]
-        ICharacterView characterView;
+        ICharacterView m_CharacterView;
 
         [Inject]
-        IStateChanger stateChanger;
+        IStateChanger m_StateChanger;
 
         [Inject]
         IGridModel gridModel;
 
-      //  [Inject]
+        [Inject]
+        ICommandFactory m_CommandFactory;
+
+        //  [Inject]
         ICharacterInputView m_CharacterInputView;
 
-        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, IGridModel gridModel, ICharacterInputView characterInputView, IStateChanger stateChanger)
+        ICommand nextCommand;
+
+        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, IGridModel gridModel, ICharacterInputView characterInputView, IStateChanger stateChanger,ICommandFactory commandFactory)
         {
             m_CharacterModel = characterModel;
             characterModel.Moved.Subscribe(MoveCharacterView);
@@ -35,7 +40,7 @@ namespace gaw241020.Presenter
 
         void MoveCharacterView(Vector2Int vector2Int)
         {
-            characterView.Move(vector2Int);
+            m_CharacterView.Move(vector2Int);
         }
 
         bool m_IsLoop = true;
@@ -54,16 +59,30 @@ namespace gaw241020.Presenter
         {
             Log.DebugLog("キャラクター操作開始処理");
             m_IsLoop = true;
-            CheckIsLocationTouched();
+            // CheckIsLocationTouched(); Model側に持たせるべき
         }
 
         async UniTask StateMainLoop()
         {
-            Log.DebugLog("キャラクター操作ープ処理");
-            await UniTask.WaitUntil(() => WaitInput());
-            await UniTask.WaitUntil(() => !characterView.isMoving);
+            //有効な入力を待ち、次のコマンドを登録する
+            await UniTask.WaitUntil(() => TryGetNextCommand());
 
-            CheckIsLocationTouched();
+            //次のコマンドを実行する
+            nextCommand.Execute();
+
+            //コマンドの実行（※ここでは歩き）が終わるまで待つ　コマンド側に購読させられる
+            await UniTask.WaitUntil(() => nextCommand.IsEndCommand);
+
+            //コマンド実行後の処理を行う　コマンド側に購読させられる
+            nextCommand.EndCommand();
+
+            if (nextCommand.IsEndState)
+            {
+                EndLoop();
+            }
+            nextCommand = null;
+
+
         }
 
         IStateContainer m_StateContainer;
@@ -82,60 +101,35 @@ namespace gaw241020.Presenter
                 m_CharacterInputView.EraseDecideGuide();
             }
         }
-        bool WaitInput()
+
+        bool TryGetNextCommand()
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                TryWalk(Vector2Int.up);
+                nextCommand = m_CommandFactory.CreateMoveCommand(Vector2Int.up);
                 return true;
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                TryWalk(Vector2Int.right);
+                nextCommand = m_CommandFactory.CreateMoveCommand(Vector2Int.right);
                 return true;
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                TryWalk(Vector2Int.down);
+                nextCommand = m_CommandFactory.CreateMoveCommand(Vector2Int.down);
                 return true;
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                TryWalk(Vector2Int.left);
+                nextCommand = m_CommandFactory.CreateMoveCommand(Vector2Int.left);
                 return true;
             }
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                TryTalk();
+                nextCommand = m_CommandFactory.CreateTalkCommand(m_StateContainer.GetTalkState);
                 return true;
             }
-            return false;
-        }
-
-        bool TryWalk(Vector2Int direction)
-        {
-            if(gridModel.IsWalkable(m_CharacterModel.CharacterPosition + direction))
-            {
-                m_CharacterModel.Walk(direction);
-                return true;
-
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
-        bool TryTalk()
-        {
-            if (m_CharacterModel.IsTouchingLocationExist)
-            {
-                //Talkへ遷移
-                stateChanger.ChangeState(m_StateContainer.GetTalkState);
-                EndLoop();
-                return true;
-            }
+            nextCommand = null;
             return false;
         }
 
@@ -143,26 +137,6 @@ namespace gaw241020.Presenter
         {
             m_IsLoop = false;
         }
-
-        void CheckIsLocationTouched()
-        {
-            if (m_CharacterModel.IsTouchingLocationExist)
-            {
-                if (!m_CharacterInputView.IsDecideGuideDisplayed)
-                {
-                    m_CharacterInputView.ShowDecideGuide();
-                }
-            }
-            else
-            {
-                if (m_CharacterInputView.IsDecideGuideDisplayed)
-                {
-                    m_CharacterInputView.EraseDecideGuide();
-                }
-            }
-
-        }
-
 
         public void EnterCharacterToLocation(GameObject townObject)
         {

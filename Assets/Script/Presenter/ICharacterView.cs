@@ -9,6 +9,7 @@ namespace gaw241020.Presenter{
     {
         UniTask Move(Vector2Int vector2Int);
 
+
         bool isMoving { get; }
     }
 }
