@@ -5,10 +5,10 @@ namespace gaw241020.Presenter
 {
     public interface ICharacterInputView
     {
-        void ShowDecideGuide();
+        void ShowDecideGuide(string s);
 
         bool IsDecideGuideDisplayed { get; }
 
-        void EraseDecideGuide();
+        void EraseDecideGuide(string s);
     }
 }

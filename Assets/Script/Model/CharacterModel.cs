@@ -12,10 +12,15 @@ namespace gaw241020.Model {
     {
         Vector2Int characterPositionInt;
         Subject<Vector2Int> movedSubject = new Subject<Vector2Int>();
+        Subject<string> enteredSubject = new Subject<string>();
+        Subject<string> exitedSubject = new Subject<string>();
 
         string m_TouchedLocationName = "";
 
         public IObservable<Vector2Int> Moved => movedSubject;
+
+        public IObservable<string> EnteredInLocation => enteredSubject;
+        public IObservable<string> ExitedFromLocation => exitedSubject;
 
         public Vector2Int CharacterPosition => characterPositionInt;
 
@@ -40,11 +45,13 @@ namespace gaw241020.Model {
             Debug.Log("キャラクターがTownに触れたことをModelが取得");
             Log.DebugAssert(m_TouchedLocationName == "");
             m_TouchedLocationName = locationName;
+            enteredSubject.OnNext(locationName);
         }
+
         public void ExitCharacterFromLocation(string locationName)
         {
-            Log.DebugAssert(m_TouchedLocationName == locationName);
             m_TouchedLocationName = "";
+            exitedSubject.OnNext(locationName);
         }
     }
 }

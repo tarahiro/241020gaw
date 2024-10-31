@@ -18,6 +18,8 @@ namespace gaw241020.Editor
             Index = 0,
             Id = 1,
             Description = 2,
+            EventSituation = 3,
+            EventId = 4
         }
 
         //--------------------------------------------------------------------
@@ -58,6 +60,8 @@ namespace gaw241020.Editor
                         LocationDataList.Add(new LocationMasterData.Record(index, id)
                         {
                             SettableDescription = sheet[row, (int)Columns.Description].String,
+                            SettableEventSituation = sheet[row, (int)Columns.EventSituation].String,
+                            SettableEventId = sheet[row, (int)Columns.EventId].String,
                         });
                     }
                 }

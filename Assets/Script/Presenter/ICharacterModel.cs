@@ -9,6 +9,8 @@ namespace gaw241020.Presenter{
     public interface ICharacterModel
     {
         IObservable<Vector2Int> Moved { get; }
+        IObservable<string> EnteredInLocation { get; }
+        IObservable<string> ExitedFromLocation { get; }
 
         Vector2Int CharacterPosition { get; }
 

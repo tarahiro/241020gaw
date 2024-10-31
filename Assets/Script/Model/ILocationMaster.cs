@@ -13,5 +13,9 @@ namespace gaw241020.Model
         string Id { get; }
 
         string Description{ get; }
+
+        string EventSituation { get; }
+
+        string EventId { get; }
     }
 }

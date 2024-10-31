@@ -32,6 +32,7 @@ namespace gaw241020.Presenter
             //何も書かないのはよくないが…
             //ここにステート終了処理的なのを入れるべきでは？
         }
+        public bool IsCircluateCommand => false;
 
         public bool IsEndState => true;
 

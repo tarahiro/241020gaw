@@ -19,12 +19,12 @@ namespace gaw241020.View
         }
         
 
-        public void ShowDecideGuide()
+        public void ShowDecideGuide(string s)
         {
             SetActiveDecideGuide(true);
         }
 
-        public void EraseDecideGuide()
+        public void EraseDecideGuide(string s)
         {
             SetActiveDecideGuide(false);
         }

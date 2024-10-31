@@ -29,11 +29,15 @@ namespace gaw241020.Presenter
         ICharacterInputView m_CharacterInputView;
 
         ICommand nextCommand;
+        ICommand currentCommand;
 
         public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, IGridModel gridModel, ICharacterInputView characterInputView, IStateChanger stateChanger,ICommandFactory commandFactory)
         {
             m_CharacterModel = characterModel;
+            m_CharacterInputView = characterInputView;
             characterModel.Moved.Subscribe(MoveCharacterView);
+            characterModel.EnteredInLocation.Subscribe(m_CharacterInputView.ShowDecideGuide);
+            characterModel.ExitedFromLocation.Subscribe(m_CharacterInputView.EraseDecideGuide);
 
             m_CharacterInputView = characterInputView;
         }
@@ -67,21 +71,36 @@ namespace gaw241020.Presenter
             //有効な入力を待ち、次のコマンドを登録する
             await UniTask.WaitUntil(() => TryGetNextCommand());
 
+            CommandExecute:
+
             //次のコマンドを実行する
-            nextCommand.Execute();
+            currentCommand = nextCommand;
+            nextCommand = null;
+            currentCommand.Execute();
 
             //コマンドの実行（※ここでは歩き）が終わるまで待つ　コマンド側に購読させられる
-            await UniTask.WaitUntil(() => nextCommand.IsEndCommand);
+            await UniTask.WaitUntil(() => currentCommand.IsEndCommand);
+
+            //今が歩きで次も歩きなら、EndCommandを呼ばずに繰り返す
+            if (currentCommand.IsCircluateCommand)
+            {
+                if (TryGetNextCommand())
+                {
+                    if (nextCommand.IsCircluateCommand)
+                    {
+                        goto CommandExecute;
+                    }
+                }
+            }
 
             //コマンド実行後の処理を行う　コマンド側に購読させられる
-            nextCommand.EndCommand();
+            currentCommand.EndCommand();
 
-            if (nextCommand.IsEndState)
+            if (currentCommand.IsEndState)
             {
                 EndLoop();
             }
-            nextCommand = null;
-
+            currentCommand = null;
 
         }
 
@@ -98,7 +117,7 @@ namespace gaw241020.Presenter
             Log.DebugLog("キャラクター操作終了処理");
             if (m_CharacterInputView.IsDecideGuideDisplayed)
             {
-                m_CharacterInputView.EraseDecideGuide();
+                m_CharacterInputView.EraseDecideGuide(m_CharacterModel.TouchingLocationId);
             }
         }
 

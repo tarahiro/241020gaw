@@ -18,6 +18,7 @@ namespace gaw241020.View {
 
         Transform m_CharacterTransform;
         Animator m_CharacterAnimator;
+        string m_LatestDirectionString;
 
         //Directioné¸ÇËÇÕUtilÇ…Ç‹Ç∆ÇﬂÇÈÇ©Ç‡
 
@@ -60,18 +61,27 @@ namespace gaw241020.View {
                 walkSecondsPerTile /= 5f;
             }
 #endif
-            m_CharacterAnimator.SetTrigger(GetMoveDirection((Vector2)destination));
+            string directionString = GetMoveDirection((Vector2)destination);
+            if (directionString != m_LatestDirectionString)
+            {
+                m_LatestDirectionString = directionString;
+                m_CharacterAnimator.SetTrigger(m_LatestDirectionString);
+            }
 
             await LMotion.Create(m_CharacterTransform.position, new Vector3(destination.x, destination.y), walkSecondsPerTile).BindToPosition(m_CharacterTransform);
 
             EndMove();
         }
+
         void EndMove()
         {
-            Log.DebugLog("à⁄ìÆèIóπ");
-            m_CharacterAnimator.SetTrigger("Idle");
             isMoving = false;
+        }
 
+        public void StopMove()
+        {
+            m_CharacterAnimator.SetTrigger("Idle");
+            m_LatestDirectionString = "";
         }
 
         string GetMoveDirection(Vector2 destination)

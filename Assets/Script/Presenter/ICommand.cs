@@ -11,6 +11,7 @@ namespace gaw241020.Presenter
     {
         void Execute();
 
+        bool IsCircluateCommand { get; }
 
         bool IsEndCommand { get; }
 

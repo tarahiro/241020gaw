@@ -38,9 +38,10 @@ namespace gaw241020.Presenter
 
         public void EndCommand()
         {
-            CheckIsLocationTouched();
+            m_CharacterView.StopMove();
         }
 
+        public bool IsCircluateCommand => true;
 
         public bool IsEndState => false;
 
@@ -60,23 +61,5 @@ namespace gaw241020.Presenter
 
         }
 
-        void CheckIsLocationTouched()
-        {
-            if (m_CharacterModel.IsTouchingLocationExist)
-            {
-                if (!m_CharacterInputView.IsDecideGuideDisplayed)
-                {
-                    m_CharacterInputView.ShowDecideGuide();
-                }
-            }
-            else
-            {
-                if (m_CharacterInputView.IsDecideGuideDisplayed)
-                {
-                    m_CharacterInputView.EraseDecideGuide();
-                }
-            }
-
-        }
     }
 }
