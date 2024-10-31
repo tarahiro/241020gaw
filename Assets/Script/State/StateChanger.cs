@@ -18,6 +18,7 @@ namespace gaw241020.State
 
         public void ChangeState(IState state)
         {
+            Log.DebugAssert(state != null);
             m_StateMachine.SetNextState(state);
         }
     }

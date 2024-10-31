@@ -9,15 +9,18 @@ namespace gaw241020
 
         IState m_CharacterState;
         IState m_TalkState;
+        IState m_WarpState;
 
-        public StateContainer(IState characterState, IState talkState)
+        public StateContainer(IState characterState, IState talkState,IState warpState)
         {
             m_CharacterState = characterState.RegisterStateContainer(this);
             m_TalkState = talkState.RegisterStateContainer(this);
+            m_WarpState = warpState.RegisterStateContainer(this);
         }
 
         public IState GetCharacterState => m_CharacterState;
         public IState GetTalkState => m_TalkState;
+        public IState GetWarpState => m_WarpState;
 
     }
 }

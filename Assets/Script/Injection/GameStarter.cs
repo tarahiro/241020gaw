@@ -31,6 +31,10 @@ public class GameStarter : MonoInstaller
         Container.BindInterfacesTo<TalkView>().FromComponentInHierarchy().AsSingle();
         Container.Bind<TalkState>().AsSingle();
 
+        Container.BindInterfacesTo<WarpModel>().AsSingle();
+        Container.BindInterfacesTo<WarpPresenter>().AsSingle();
+        Container.Bind<WarpState>().AsSingle();
+
         Container.BindInterfacesTo<StateMachine>().AsSingle();
         Container.BindInterfacesTo<StateChanger>().AsSingle();
         Container.BindInterfacesTo<StateContainerFactory>().AsSingle();

@@ -16,12 +16,14 @@ namespace gaw241020.Presenter{
 
         String TouchingLocationId { get; }
 
+        bool IsTouchingLocationExist { get; }
+
+        void FakeWarp(Vector2Int destination);
+
         void Walk(Vector2Int direction);
-        
+
         void EnterCharacterToLocation(string locationName);
 
         void ExitCharacterFromLocation(string locationName);
-
-        bool IsTouchingLocationExist { get; }
     }
 }

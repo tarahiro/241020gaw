@@ -32,6 +32,12 @@ namespace gaw241020.Model {
         {
             characterPositionInt = Vector2Int.zero; 
         }
+        
+        public void FakeWarp(Vector2Int destination)
+        {
+            characterPositionInt = destination;
+            movedSubject.OnNext(destination);
+        }
 
 
         public void Walk(Vector2Int direction)

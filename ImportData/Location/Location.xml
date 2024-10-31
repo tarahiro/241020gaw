@@ -86,7 +86,7 @@
     ss:Color="#000000"/>
    <Interior ss:Color="#FFF2CC" ss:Pattern="Solid"/>
   </Style>
-  <Style ss:ID="s69">
+  <Style ss:ID="s68">
    <Alignment ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
@@ -120,7 +120,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">TownPrefabBase</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">LocationPrefabBase</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">テスト</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Warp</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">WarpTest</Data></Cell>
@@ -128,7 +128,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkCastle1</Data></Cell>
-    <Cell ss:StyleID="s69"><PhoneticText
+    <Cell ss:StyleID="s68"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ダイガクトシキョウガクモントカギロンニギ</PhoneticText><Data
       ss:Type="String">デナン山脈のふもと、大学都市オクスブリッジ。&#10;今日も学問の徒が交わす議論で賑やか。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
@@ -155,21 +155,14 @@
     <Pane>
      <Number>3</Number>
      <ActiveRow>4</ActiveRow>
-     <ActiveCol>4</ActiveCol>
+     <ActiveCol>1</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R5C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R6C1:R6C5</Range>
+   <Range>R5C1:R6C5</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

@@ -18,5 +18,13 @@ namespace gaw241020.Model
         {
             return m_LocationMasterDataProvider.TryGetFromId(locationName).GetMaster().Description;
         }
+        public string GetLocationEventSituation(string locationName)
+        {
+            return m_LocationMasterDataProvider.TryGetFromId(locationName).GetMaster().EventSituation;
+        }
+        public string GetLocationEventId(string locationName)
+        {
+            return m_LocationMasterDataProvider.TryGetFromId(locationName).GetMaster().EventId;
+        }
     }
 }
