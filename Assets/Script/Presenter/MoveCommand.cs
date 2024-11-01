@@ -38,7 +38,7 @@ namespace gaw241020.Presenter
 
         public void EndCommand()
         {
-            m_CharacterView.StopMove();
+            m_CharacterView.StopMoveBehavior();
         }
 
         public bool IsCircluateCommand => true;

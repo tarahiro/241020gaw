@@ -2,6 +2,7 @@
 using UnityEngine;
 using Zenject;
 using gaw241020.State;
+using Tarahiro;
 
 namespace gaw241020.Presenter
 {
@@ -9,22 +10,32 @@ namespace gaw241020.Presenter
     {
         IStateChanger m_StateChanger;
 
+        ICharacterModel m_CharacterModel;
+
         IState m_TalkState;
 
-        public TalkCommand(IStateChanger stateChanger, IState talkState)
+        bool m_IsEndState = false;
+
+        public TalkCommand(IStateChanger stateChanger,ICharacterModel characterModel,  IState talkState)
         {
             m_StateChanger = stateChanger;
+            m_CharacterModel = characterModel;
             m_TalkState = talkState;
         }
 
         public void Execute()
         {
-            Talk();
+            TryTalk();
         }
 
-        void Talk()
+        void TryTalk()
         {
-            m_StateChanger.ChangeState(m_TalkState);
+            if (m_CharacterModel.IsTouchingLocationExist)
+            {
+                Log.DebugLog(m_CharacterModel.TouchingLocationId);
+                m_StateChanger.ChangeState(m_TalkState);
+                m_IsEndState = true;
+            }
         }
 
         public void EndCommand()
@@ -34,7 +45,7 @@ namespace gaw241020.Presenter
         }
         public bool IsCircluateCommand => false;
 
-        public bool IsEndState => true;
+        public bool IsEndState => m_IsEndState;
 
         public bool IsEndCommand => true;
     }

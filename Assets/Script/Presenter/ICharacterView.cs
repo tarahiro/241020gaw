@@ -9,7 +9,7 @@ namespace gaw241020.Presenter{
     {
         UniTask Move(Vector2Int vector2Int);
 
-        void StopMove();
+        void StopMoveBehavior();
 
         bool isMoving { get; }
     }

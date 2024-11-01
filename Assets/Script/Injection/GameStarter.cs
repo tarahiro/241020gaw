@@ -31,6 +31,12 @@ public class GameStarter : MonoInstaller
         Container.BindInterfacesTo<TalkView>().FromComponentInHierarchy().AsSingle();
         Container.Bind<TalkState>().AsSingle();
 
+        Container.BindInterfacesTo<MapModel>().AsSingle();
+        Container.BindInterfacesTo<MapFillUiView>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<MapPresenter>().AsSingle().NonLazy();
+
+
+        Container.BindInterfacesTo<WarpDataProvider>().FromComponentInHierarchy().AsSingle();
         Container.BindInterfacesTo<WarpModel>().AsSingle();
         Container.BindInterfacesTo<WarpPresenter>().AsSingle();
         Container.Bind<WarpState>().AsSingle();

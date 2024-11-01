@@ -78,7 +78,7 @@ namespace gaw241020.View {
             isMoving = false;
         }
 
-        public void StopMove()
+        public void StopMoveBehavior()
         {
             m_CharacterAnimator.SetTrigger("Idle");
             m_LatestDirectionString = "";
@@ -93,12 +93,10 @@ namespace gaw241020.View {
             foreach(var v in m_DirectionList)
             {
                 float f = Vector2.Dot((Vector2)v, MoveVector);
-                Log.DebugLog(f.ToString());
                 innerProductList.Add(f);
             }
 
             string s = ((Direction)innerProductList.IndexOf(innerProductList.Max())).ToString();
-            Log.DebugLog(s);
 
             return s;
 

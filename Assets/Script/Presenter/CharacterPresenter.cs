@@ -35,9 +35,9 @@ namespace gaw241020.Presenter
         {
             m_CharacterModel = characterModel;
             m_CharacterInputView = characterInputView;
-            characterModel.Moved.Subscribe(MoveCharacterView);
-            characterModel.EnteredInLocation.Subscribe(m_CharacterInputView.ShowDecideGuide);
-            characterModel.ExitedFromLocation.Subscribe(m_CharacterInputView.EraseDecideGuide);
+            m_CharacterModel.Moved.Subscribe(MoveCharacterView);
+            m_CharacterModel.EnteredInLocation.Subscribe(m_CharacterInputView.ShowDecideGuide);
+            m_CharacterModel.ExitedFromLocation.Subscribe(m_CharacterInputView.EraseDecideGuide);
 
             m_CharacterInputView = characterInputView;
         }
@@ -56,6 +56,7 @@ namespace gaw241020.Presenter
             {
                 await StateMainLoop();
             }
+            Log.DebugLog("ループ終了");
             StateExit();
         }
 
@@ -154,6 +155,7 @@ namespace gaw241020.Presenter
 
         void EndLoop()
         {
+            Log.DebugLog("ループ終了設定");
             m_IsLoop = false;
         }
 

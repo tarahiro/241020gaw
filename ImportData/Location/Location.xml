@@ -123,7 +123,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">LocationPrefabBase</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">テスト</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Warp</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">WarpTest</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">WarpBase</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
@@ -155,7 +155,7 @@
     <Pane>
      <Number>3</Number>
      <ActiveRow>4</ActiveRow>
-     <ActiveCol>1</ActiveCol>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

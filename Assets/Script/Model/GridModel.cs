@@ -91,7 +91,6 @@ namespace gaw241020.Model
 
         bool isInTileMap(Vector2Int position, List<Tilemap> tilemapList)
         {
-            Debug.Log("タイルマップの広さ確認（未テスト）");
 
                 if(position.x < m_TilemapList[m_GroundLayer].origin.x 
                 || position.x > m_TilemapList[m_GroundLayer].origin.x + m_TilemapList[m_GroundLayer].size.x)

@@ -29,18 +29,33 @@ namespace gaw241020.Presenter
         
         public async UniTask Enter()
         {
+            string locationId = m_CharacterModel.TouchingLocationId;
+
+            Log.DebugAssert(locationId != "");
+
+            if (!m_LocationModel.IsLocationChecked(locationId))
+            {
+                Log.DebugLog("LocationModelに" + locationId + "のチェックを通知");
+                m_LocationModel.CheckLocation(locationId);
+            }
+            else
+            {
+                Log.DebugLog("すでに" + locationId + "チェックずみ");
+            }
+
+            
             await m_TalkView.DisplayTalk(
-                m_LocationModel.GetLocationDescription(m_CharacterModel.TouchingLocationId)
+                m_LocationModel.GetLocationDescription(locationId)
                 );
 
 
             //ロケーションによって次のState遷移先が異なる
-            string eventSituation = m_LocationModel.GetLocationEventSituation(m_CharacterModel.TouchingLocationId);
+            string eventSituation = m_LocationModel.GetLocationEventSituation(locationId);
             switch (eventSituation)
             {
                 case "Warp":
                     m_WarpModel.SetWarpData(
-                        m_LocationModel.GetLocationEventId(m_CharacterModel.TouchingLocationId)
+                        m_LocationModel.GetLocationEventId(locationId)
                         );
                     m_StateChanger.ChangeState(m_StateContainer.GetWarpState);
                     break;

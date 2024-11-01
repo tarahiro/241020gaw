@@ -6,7 +6,7 @@ using Tarahiro;
 using gaw241020.State;
 
 namespace gaw241020.Presenter { 
-    public class WarpPresenter : IWarpPresenter, IStateGettable
+    public class WarpPresenter : IWarpPresenter
     {
         [Inject]
         IWarpModel m_WarpModel;
@@ -31,6 +31,7 @@ namespace gaw241020.Presenter {
 
             await UniTask.WaitUntil(() => !m_CharacterView.isMoving);
 
+            m_CharacterView.StopMoveBehavior();
             m_StateChanger.ChangeState(m_StateContainer.GetCharacterState);
         }
 

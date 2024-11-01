@@ -31,7 +31,7 @@ namespace gaw241020.Presenter
 
         public ICommand CreateTalkCommand(IState talkState)
         {
-            return new TalkCommand(m_StateChanger, talkState);
+            return new TalkCommand(m_StateChanger,m_CharacterModel, talkState);
 
         }
     }

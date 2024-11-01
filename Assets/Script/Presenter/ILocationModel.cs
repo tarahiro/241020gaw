@@ -8,5 +8,8 @@ namespace gaw241020.Presenter
         string GetLocationDescription(string locationObjectName);
         string GetLocationEventSituation(string locationObjectName);
         string GetLocationEventId(string locationObjectName);
+
+        bool IsLocationChecked(string locationObjectName);
+        void CheckLocation(string locationObjectName);
     }
 }
