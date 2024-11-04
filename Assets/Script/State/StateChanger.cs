@@ -10,16 +10,19 @@ namespace gaw241020.State
         [Inject]
         IStateMachine m_StateMachine;
 
-
-        public StateChanger(IStateMachine stateMachine)
-        {
-
-        }
-
         public void ChangeState(IState state)
         {
+            
             Log.DebugAssert(state != null);
-            m_StateMachine.SetNextState(state);
+            if (m_StateMachine.IsRegisteredNextState())
+            {
+                Log.DebugLog("次ステート登録済み");
+            }
+            else
+            {
+                m_StateMachine.SetNextState(state);
+            }
         }
+
     }
 }

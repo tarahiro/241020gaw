@@ -35,7 +35,7 @@ public class GameStarter : MonoInstaller
 
         Container.BindInterfacesTo<MapModel>().AsSingle();
         Container.BindInterfacesTo<MapFillUiView>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<MapPresenter>().AsSingle().NonLazy();
+        Container.BindInterfacesTo<MapPresenter>().AsSingle().NonLazy();
 
 
         Container.BindInterfacesTo<WarpDataProvider>().FromComponentInHierarchy().AsSingle();
@@ -46,6 +46,9 @@ public class GameStarter : MonoInstaller
         Container.BindInterfacesTo<UnlockModel>().AsSingle();
         Container.BindInterfacesTo<UnlockPresenter>().AsSingle();
         Container.Bind<UnlockState>().AsSingle();
+
+        Container.BindInterfacesTo<EndPresenter>().AsSingle();
+        Container.Bind<EndState>().AsSingle();
 
 
         Container.BindInterfacesTo<StateMachine>().AsSingle();

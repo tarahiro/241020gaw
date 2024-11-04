@@ -182,21 +182,16 @@ namespace gaw241020.Presenter
 
         void EndLoop()
         {
-            Log.DebugLog("ループ終了設定");
             m_IsLoop = false;
         }
 
         public void EnterCharacterToLocation(GameObject townObject)
         {
-            Debug.Log("キャラクターがTownに触れたことをPresenterで取得");
-
             m_CharacterModel.EnterCharacterToLocation(townObject.name);
         }
 
         public void ExitCharacterFromLocation(GameObject townObject)
         {
-            Debug.Log("キャラクターがTownから離れたことをPresenterで取得");
-
             m_CharacterModel.ExitCharacterFromLocation(townObject.name);
         }
     }

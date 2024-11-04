@@ -9,5 +9,6 @@ namespace gaw241020
         IState GetTalkState { get; }
         IState GetWarpState { get; }
         IState GetUnlockState { get; }
+        IState GetEndState { get; }
     }
 }

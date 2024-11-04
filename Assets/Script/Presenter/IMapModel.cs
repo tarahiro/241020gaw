@@ -14,5 +14,7 @@ namespace gaw241020.Presenter
         void CatchLocationUpdate(int allLocationCount, int checkedLocationCount);
 
         IObservable<float> ChangedFillPercent { get; }
+
+        IObservable<object> maxedMapFillPercent { get; }
     }
 }

@@ -100,7 +100,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="10" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="9" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
@@ -120,13 +120,6 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">LocationPrefabBase</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">テスト</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Warp</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">WarpBase</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkCastle1</Data></Cell>
     <Cell ss:StyleID="s68"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ダイホッポウイチキタヤマヤマムジャシンスオソジュウミンイシカベウチガワスシンガクイソソ</PhoneticText><Data
@@ -135,21 +128,21 @@
     <Cell ss:StyleID="s67"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkTown1</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">ノージャフはジエラー半島の付け根の、小都市である。ここに住む人はみな、漁をして暮らしている。&#10;南には穏やかな海、北には荒々しい海があり、食卓はいつも様々な魚であふれている。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkTown2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">大ヨークの西の果てに、小さな村、ダーナーがある。南にはトレウパ大陸を望むのだが、ここには古くからの言い伝えがある。&#10;人々の騒ぎ声に腹を立てた神が、斧を振り下ろし、大ヨークが大陸から切れてしまったというものである。&#10;なので、ここの住民は息を潜めるように暮らしていて、栄えることがない。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Unlock</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Ship</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkCity1</Data></Cell>
     <Cell ss:StyleID="s68"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">レキシアサトシムカシサビギョコウテキヨウアミヌオンナヒガシタイリクハコキチョウキヌイトサイコウコウゲイヒンミナミタイリクオクダ</PhoneticText><Data
@@ -158,7 +151,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkToGerden</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">4</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">GerdenCity1</Data></Cell>
     <Cell ss:StyleID="s68"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">タイリクコクキタミナト</PhoneticText><Data
@@ -186,15 +179,14 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>7</ActiveRow>
-     <ActiveCol>4</ActiveCol>
+     <ActiveRow>8</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R10C5</Range>
+   <Range>R5C1:R9C5</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

@@ -34,5 +34,9 @@ namespace gaw241020
             }
 
         }
+        public bool IsRegisteredNextState()
+        {
+            return m_NextState != null;
+        }
     }
 }

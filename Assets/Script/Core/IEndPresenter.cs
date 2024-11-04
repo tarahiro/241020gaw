@@ -4,12 +4,8 @@ using Cysharp.Threading.Tasks;
 
 namespace gaw241020
 {
-    public interface IStateMachine
+    public interface IEndPresenter
     {
         UniTask Enter();
-
-        void SetNextState(IState state);
-
-        bool IsRegisteredNextState();
     }
 }
