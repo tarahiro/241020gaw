@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-11-01T16:02:07Z</LastSaved>
+  <LastSaved>2024-11-04T15:23:38Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -100,10 +100,10 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="9" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="22" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
-   <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="112.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="536.25"/>
    <Column ss:AutoFitWidth="0" ss:Width="77.25"/>
    <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
@@ -123,41 +123,146 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkCastle1</Data></Cell>
     <Cell ss:StyleID="s68"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ダイホッポウイチキタヤマヤマムジャシンスオソジュウミンイシカベウチガワスシンガクイソソ</PhoneticText><Data
-      ss:Type="String">オクスブリッジは大ヨークの北方に位置する。&#10;北のデナンの山々の向こうには邪神が棲むとされ、&#10;それを畏れて住民はみな石の壁の内側に住み、神学に意を注いでいる。</Data></Cell>
+      ss:Type="String">&quot;オクスブリッジは大ヨークの北方に位置する。&#10;北のデナンの山々の向こうには邪神が棲むとされ、&#10;それを畏れて住民はみな石の壁の内側に住み、神学に意を注いでいる。&quot;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">1</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkTown1</Data></Cell>
-    <Cell ss:StyleID="s68"><Data ss:Type="String">ノージャフはジエラー半島の付け根の、小都市である。ここに住む人はみな、漁をして暮らしている。&#10;南には穏やかな海、北には荒々しい海があり、食卓はいつも様々な魚であふれている。</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">&quot;ノージャフはジエラー半島の付け根の、小都市である。&#10;ここに住む人はみな、漁をして暮らしている。&#10;南には穏やかな海、北には荒々しい海があり、食卓はいつも様々な魚であふれている。&quot;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkTown2</Data></Cell>
-    <Cell ss:StyleID="s68"><Data ss:Type="String">大ヨークの西の果てに、小さな村、ダーナーがある。南にはトレウパ大陸を望むのだが、ここには古くからの言い伝えがある。&#10;人々の騒ぎ声に腹を立てた神が、斧を振り下ろし、大ヨークが大陸から切れてしまったというものである。&#10;なので、ここの住民は息を潜めるように暮らしていて、栄えることがない。</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Unlock</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Ship</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">&quot;大ヨークの西の果てに、小さな村、ダーナーがある。南にはトレウパ大陸を望むのだが、ここには古くからの言い伝えがある。&#10;人々の騒ぎ声に腹を立てた神が、斧を振り下ろしたので、大ヨークが大陸から切れてしまったというものである。&#10;よって、ここの住民は息を潜めるように暮らしていて、栄えることがない。&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkCity1</Data></Cell>
     <Cell ss:StyleID="s68"><PhoneticText
-      xmlns="urn:schemas-microsoft-com:office:excel">レキシアサトシムカシサビギョコウテキヨウアミヌオンナヒガシタイリクハコキチョウキヌイトサイコウコウゲイヒンミナミタイリクオクダ</PhoneticText><Data
-      ss:Type="String">サウスポートは海沿いの、歴史の浅い都市である。&#10;昔は寂れた漁港しかなかったが、手の器用な網縫いの女たちが、&#10;東の大陸から運ばれてくる貴重な絹糸を、最高の工芸品にして、&#10;南の大陸へ送り出せるようになった。&#10;</Data></Cell>
+      xmlns="urn:schemas-microsoft-com:office:excel">キョダイギョモウアオクダワタシフネノタイリクム</PhoneticText><Data
+      ss:Type="String">&quot;サウスポートは海沿いで、歴史は浅いが、巨大な都市である。&#10;手の器用な漁網編みの女たちが、東の大陸から運ばれてくる絹糸を最高の工芸品にして、&#10;南の大陸へ送り出す。私はその船に乗り、トレウパ大陸へ向かった。&quot;&#10;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Warp</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkToGerden</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">4</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">GerdenCity1</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GerdenCastle1</Data></Cell>
     <Cell ss:StyleID="s68"><PhoneticText
-      xmlns="urn:schemas-microsoft-com:office:excel">タイリクコクキタミナト</PhoneticText><Data
-      ss:Type="String">トレウパ大陸、ゲーデン国の北の港、ノルドウファブルグ＝デレステイン。</Data></Cell>
+      xmlns="urn:schemas-microsoft-com:office:excel">フネミナミイイツカタイリクコクキタコウワントシトウチャクリョウシツイシハコカワマチナカナガヒガシタイリクテイキセンワタクシアセンテイ</PhoneticText><Data
+      ss:Type="String">&quot;船で南行すること五日で、トレウパ大陸ゲーデン国の北の港湾都市、&#10;ノルドウファブルグ＝デレステインに到着する。&#10;良質の石を運ぶ川が街中に流れている。&#10;東の大陸への定期船はなく、私有船を手に入れねばなるまい。&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GerdenTown1</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ヒガシニシアイダアラソマチサンミャクニシタイコクセンリョウアトホキュウツヅヤマゴキセツサイショタイザイイ</PhoneticText><Data
+      ss:Type="String">&quot;ストリューブールは、東のゲーデンと西のフロニアの間で争われている街である。&#10;山脈のすぐそばにあるので、西の大国フロニアが占領しても、その後の補給が続かない。&#10;山越えをする季節ではなかったので、最初の滞在ではフロニアへは行かなかった。&#10;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GerdenTown2</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">タイリクホクタントシウミムチガヒトビトグウゾウキョウトカミオソボウエキシイサケサワク</PhoneticText><Data
+      ss:Type="String">&quot;ステルジムは、トレウパ大陸の北端の都市である。&#10;海の向こうのダーナーとは違って、ここの人々はみな偶像教徒なので、&#10;神を恐れることはなく、貿易で仕入れた酒で騒がしく暮らしている。&quot;&#10;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GerdenTown3</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">トシタイリクホクトウイチリッパトシカワコセイコクキシアトクミワタシイチドダイモド</PhoneticText><Data
+      ss:Type="String">&quot;ドレシャワという都市が、トレウパ大陸の北東に位置している。&#10;かつてはたいへん立派な都市だったが、&#10;シャデル川を越えて攻め入ってきたゲーデン国の騎士たちに、すっかり荒らされてしまった。&#10;特に見るところもないので、私は一度大ヨークへ戻ることにした。&quot;&#10;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Warp</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">GerdenToYork</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GerdenTown4</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ダイレイホウマチダイレイホウアシフイカゾクタマシイヌキクルイサキスモノ</PhoneticText><Data
+      ss:Type="String">&quot;リュクリャヴァは、大霊峰のふもとの街である。&#10; 大霊峰に足を踏み入れれば、家族もろとも魂を抜かれて気が狂うと言われているので、&#10; これより先に住む者はいない。&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="16.5">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">9</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GerdenCity1</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">タイリクミナミハダイトシワタシフネテイリクオウカイコウコウハジ</PhoneticText><Data
+      ss:Type="String">&quot;アラは、トレウパ大陸の南の果ての大都市である。&#10; ここで私はついに船を手に入れ、陸央海の航行を始めた。&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Unlock</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Ship</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">IsleTown1</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">シマリクチュウカイナンブウハクガイノガジャキョウシントミヨアク</PhoneticText><Data
+      ss:Type="String">&quot;キクレ島は、陸中海の南部に浮かんでいる。&#10; ゲーデンの迫害から逃れた、邪教信徒らが身を寄せ合って暮らしている。&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">IsleTown2</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ダイナンセイシマチュウオウトシリュウセイアヒトビトギジュツタクワ</PhoneticText><Data
+      ss:Type="String">&quot;アグアランドは、大ヨークの南西の島の中央の都市である。&#10; サウスポートの隆盛に合わせて、ここの人々も技術を蓄えている。&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqTown1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">テリズ</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">13</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqTown2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">デュカンベ</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">14</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqTown3</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">ガヴァルカンド</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqCity1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">アサダバード</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">16</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqCity2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">テネチネティラン</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">17</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqCastle1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">シェンナイ</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"/>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -179,14 +284,155 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>8</ActiveRow>
+     <ActiveRow>22</ActiveRow>
+     <ActiveCol>1</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R9C5</Range>
+   <Range>R5C1:R8C5,R9C1:R9C3</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R10C1:R10C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R11C1:R11C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R12C1:R12C3</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R13C1:R13C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R14C1,R14C3:R14C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R14C2</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R12C4:R12C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R9C4</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R9C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R15C1:R15C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R16C1:R16C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R17C1:R17C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R18C1,R18C3:R18C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R19C1,R19C3:R19C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R20C1:R20C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R21C1,R21C3:R21C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R22C1:R22C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R18C2</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R19C2</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R21C2</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

@@ -68,6 +68,7 @@ namespace gaw241020.Presenter
 
                 case "None":
                     Log.DebugLog("特になし");
+                    if(m_StateChanger.)
                     m_StateChanger.ChangeState(m_StateContainer.GetCharacterState);
                     break;
 
