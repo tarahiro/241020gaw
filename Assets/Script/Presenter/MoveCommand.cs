@@ -51,7 +51,17 @@ namespace gaw241020.Presenter
         {
             if (m_GridModel.IsWalkable(m_CharacterModel.CharacterPosition + direction))
             {
-                m_CharacterModel.Walk(direction);
+                m_CharacterModel.Move(direction);
+                return true;
+            }
+            else if
+                (m_GridModel.IsShipable(m_CharacterModel.CharacterPosition + direction))
+            {
+                if (m_CharacterModel.CanCharacterShip)
+                {
+                    m_CharacterModel.SetCharacterMoveState(CharacterPresenter.CharacterMoveState.Ship);
+                    m_CharacterModel.Move(direction);
+                }
                 return true;
             }
             else

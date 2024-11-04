@@ -10,7 +10,7 @@ using Tarahiro;
 using System.Linq;
 
 namespace gaw241020.View {
-    public class CharacterView : ICharacterView
+    public class CharacterHumanView : ICharacterView
     {
         //Memo ‚±‚ÌƒNƒ‰ƒX‚àMonoBehaviour‚É‚µ‚Ä‚à‚¢‚¢‹C‚à‚·‚é
 
@@ -34,7 +34,7 @@ namespace gaw241020.View {
 
         public bool isMoving { get; private set; }
 
-        public CharacterView()
+        public CharacterHumanView()
         {
             m_CharacterTransform = GameObject.Find("Character").transform;
             m_CharacterAnimator = m_CharacterTransform.GetComponent<Animator>();
@@ -50,6 +50,7 @@ namespace gaw241020.View {
 
         public async UniTask Move(Vector2Int destination)
         {
+            Log.DebugLog("View‚ÅMove");
             isMoving = true;
 
             float walkSecondsPerTile = c_WalkSecondsPerTile;

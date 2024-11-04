@@ -16,6 +16,8 @@ namespace gaw241020.Model {
         Subject<string> exitedSubject = new Subject<string>();
 
         string m_TouchedLocationName = "";
+        CharacterPresenter.CharacterMoveState m_MoveState;
+        bool m_CanCharacterShip;
 
         public IObservable<Vector2Int> Moved => movedSubject;
 
@@ -27,6 +29,8 @@ namespace gaw241020.Model {
         public string TouchingLocationId => m_TouchedLocationName;
 
         public bool IsTouchingLocationExist => m_TouchedLocationName != "";
+
+        public bool CanCharacterShip => m_CanCharacterShip;
 
         public CharacterModel()
         {
@@ -40,7 +44,7 @@ namespace gaw241020.Model {
         }
 
 
-        public void Walk(Vector2Int direction)
+        public void Move(Vector2Int direction)
         {
             characterPositionInt += direction;
             movedSubject.OnNext(characterPositionInt);
@@ -58,6 +62,17 @@ namespace gaw241020.Model {
         {
             m_TouchedLocationName = "";
             exitedSubject.OnNext(locationName);
+        }
+
+        public void SetCharacterMoveState(CharacterPresenter.CharacterMoveState moveState)
+        {
+            Log.DebugLog(moveState.ToString());
+            m_MoveState = moveState;
+        }
+
+        public void EnableCharacterShip()
+        {
+            m_CanCharacterShip = true;
         }
     }
 }

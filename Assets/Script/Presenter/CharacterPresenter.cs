@@ -14,33 +14,52 @@ namespace gaw241020.Presenter
         ICharacterModel m_CharacterModel;
 
         [Inject]
-        ICharacterView m_CharacterView;
-
-        [Inject]
-        IStateChanger m_StateChanger;
-
-        [Inject]
-        IGridModel gridModel;
-
-        [Inject]
         ICommandFactory m_CommandFactory;
 
         //  [Inject]
         ICharacterInputView m_CharacterInputView;
 
+        [Inject]
+        ICharacterViewContainer m_CharacterViewContainer;
+
+        ICharacterView m_CharacterView;
+
         ICommand nextCommand;
         ICommand currentCommand;
 
-        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, IGridModel gridModel, ICharacterInputView characterInputView, IStateChanger stateChanger,ICommandFactory commandFactory)
+        public enum CharacterMoveState
+        {
+            Human,
+            Ship
+        }
+
+        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, ICharacterInputView characterInputView,ICommandFactory commandFactory, ICharacterViewContainer characterViewContainer)
         {
             m_CharacterModel = characterModel;
             m_CharacterInputView = characterInputView;
-            m_CharacterModel.Moved.Subscribe(MoveCharacterView);
+            m_CharacterViewContainer = characterViewContainer;
+
+            //fake
+            m_CharacterModel.EnableCharacterShip();
+
+            InitializeCharacterMoveState(CharacterMoveState.Human);
             m_CharacterModel.EnteredInLocation.Subscribe(m_CharacterInputView.ShowDecideGuide);
             m_CharacterModel.ExitedFromLocation.Subscribe(m_CharacterInputView.EraseDecideGuide);
-
-            m_CharacterInputView = characterInputView;
         }
+
+        void InitializeCharacterMoveState(CharacterMoveState moveState)
+        {
+            m_CharacterView = m_CharacterViewContainer.GetCharacterView(moveState);
+            InitializeCharacterModel(moveState);
+        }
+
+        void InitializeCharacterModel(CharacterMoveState moveState)
+        {
+            m_CharacterModel.SetCharacterMoveState(moveState);
+            m_CharacterModel.Moved.Subscribe(MoveCharacterView);
+        }
+
+        
 
         void MoveCharacterView(Vector2Int vector2Int)
         {
@@ -79,7 +98,7 @@ namespace gaw241020.Presenter
             nextCommand = null;
             currentCommand.Execute();
 
-            //コマンドの実行（※ここでは歩き）が終わるまで待つ　コマンド側に購読させられる
+            //コマンドの実行が終わるまで待つ
             await UniTask.WaitUntil(() => currentCommand.IsEndCommand);
 
             //今が歩きで次も歩きなら、EndCommandを呼ばずに繰り返す

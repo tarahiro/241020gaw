@@ -4,6 +4,7 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using gaw241020;
 using System;
+using gaw241020.Presenter;
 
 namespace gaw241020.Presenter{
     public interface ICharacterModel
@@ -11,6 +12,7 @@ namespace gaw241020.Presenter{
         IObservable<Vector2Int> Moved { get; }
         IObservable<string> EnteredInLocation { get; }
         IObservable<string> ExitedFromLocation { get; }
+       // IObservable<CharacterPresenter.CharacterMoveState> ChangedMoveState { get; }
 
         Vector2Int CharacterPosition { get; }
 
@@ -20,10 +22,17 @@ namespace gaw241020.Presenter{
 
         void FakeWarp(Vector2Int destination);
 
-        void Walk(Vector2Int direction);
+        void Move(Vector2Int direction);
 
         void EnterCharacterToLocation(string locationName);
 
         void ExitCharacterFromLocation(string locationName);
+
+        void SetCharacterMoveState(CharacterPresenter.CharacterMoveState moveState);
+
+        void EnableCharacterShip();
+
+
+        bool CanCharacterShip { get; }
     }
 }
