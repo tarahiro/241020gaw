@@ -26,7 +26,7 @@ namespace gaw241020.Presenter
 
         public ICommand CreateMoveCommand(Vector2Int direction)
         {
-            return new MoveCommand(m_CharacterModel, m_GridModel, m_CharacterView, m_CharacterInputView, direction);
+            return new WalkCommand(m_CharacterModel, m_GridModel, m_CharacterView, m_CharacterInputView, direction);
         }
 
         public ICommand CreateTalkCommand(IState talkState)

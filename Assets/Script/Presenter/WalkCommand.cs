@@ -4,7 +4,7 @@ using Zenject;
 
 namespace gaw241020.Presenter
 {
-    public class MoveCommand : ICommand
+    public class WalkCommand : ICommand
     {
 
         [Inject]
@@ -21,7 +21,7 @@ namespace gaw241020.Presenter
 
         Vector2Int m_Direction;
 
-        public MoveCommand(ICharacterModel characterModel, IGridModel gridModel, ICharacterView characterView,ICharacterInputView characterInputView, Vector2Int direction)
+        public WalkCommand(ICharacterModel characterModel, IGridModel gridModel, ICharacterView characterView,ICharacterInputView characterInputView, Vector2Int direction)
         {
             m_GridModel = gridModel;
             m_CharacterModel = characterModel;
@@ -33,7 +33,7 @@ namespace gaw241020.Presenter
 
         public void Execute()
         {
-            TryWalk(m_Direction);
+            TryMove(m_Direction);
         }
 
         public void EndCommand()
@@ -47,7 +47,7 @@ namespace gaw241020.Presenter
 
         public bool IsEndCommand => !m_CharacterView.isMoving;
 
-        bool TryWalk(Vector2Int direction)
+        bool TryMove(Vector2Int direction)
         {
             if (m_GridModel.IsWalkable(m_CharacterModel.CharacterPosition + direction))
             {

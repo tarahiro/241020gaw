@@ -16,9 +16,12 @@ namespace gaw241020.View
             switch (moveState)
             {
                 case CharacterPresenter.CharacterMoveState.Human:
-                    return new CharacterMover();
+                    return new CharacterWalker();
 
-               default:
+                case CharacterPresenter.CharacterMoveState.Ship:
+                    return new CharacterShiper();
+
+                default:
                     Log.DebugAssert(false);
                     return null;
 

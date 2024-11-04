@@ -11,11 +11,13 @@ using LitMotion.Extensions;
 
 namespace gaw241020.View
 {
-    public class CharacterMover : ICharacterMover
+    public class CharacterShiper : ICharacterMover
     {
         Transform m_CharacterTransform;
         Animator m_CharacterAnimator;
         string m_LatestDirectionString;
+
+        RuntimeAnimatorController m_WalkAnimatorController;
 
         const float c_WalkSecondsPerTile = .26f;
         bool m_isMoving;
@@ -29,10 +31,14 @@ namespace gaw241020.View
 
         List<Vector2Int> m_DirectionList;
 
-        public CharacterMover()
+        public CharacterShiper()
         {
             m_CharacterTransform = GameObject.Find("Character").transform;
             m_CharacterAnimator = m_CharacterTransform.GetComponent<Animator>();
+
+
+            m_WalkAnimatorController = Resources.Load<RuntimeAnimatorController>("PlayerShip");
+            m_CharacterAnimator.runtimeAnimatorController = m_WalkAnimatorController;
 
             m_DirectionList = new List<Vector2Int>();
 
