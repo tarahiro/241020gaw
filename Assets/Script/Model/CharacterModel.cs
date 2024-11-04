@@ -14,6 +14,7 @@ namespace gaw241020.Model {
         Subject<Vector2Int> movedSubject = new Subject<Vector2Int>();
         Subject<string> enteredSubject = new Subject<string>();
         Subject<string> exitedSubject = new Subject<string>();
+        Subject<CharacterPresenter.CharacterMoveState> changedMoveStateSubject = new Subject<CharacterPresenter.CharacterMoveState>();
 
         string m_TouchedLocationName = "";
         CharacterPresenter.CharacterMoveState m_MoveState;
@@ -23,6 +24,7 @@ namespace gaw241020.Model {
 
         public IObservable<string> EnteredInLocation => enteredSubject;
         public IObservable<string> ExitedFromLocation => exitedSubject;
+        public IObservable<CharacterPresenter.CharacterMoveState> ChangedMoveState => changedMoveStateSubject;
 
         public Vector2Int CharacterPosition => characterPositionInt;
 
@@ -68,6 +70,7 @@ namespace gaw241020.Model {
         {
             Log.DebugLog(moveState.ToString());
             m_MoveState = moveState;
+            changedMoveStateSubject.OnNext(moveState);
         }
 
         public void EnableCharacterShip()

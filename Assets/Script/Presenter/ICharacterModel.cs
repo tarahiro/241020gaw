@@ -12,7 +12,8 @@ namespace gaw241020.Presenter{
         IObservable<Vector2Int> Moved { get; }
         IObservable<string> EnteredInLocation { get; }
         IObservable<string> ExitedFromLocation { get; }
-       // IObservable<CharacterPresenter.CharacterMoveState> ChangedMoveState { get; }
+        
+        IObservable<CharacterPresenter.CharacterMoveState> ChangedMoveState { get; }
 
         Vector2Int CharacterPosition { get; }
 

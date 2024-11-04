@@ -19,12 +19,12 @@ public class GameStarter : MonoInstaller
         Container.BindInterfacesTo<LocationMasterDataProvider>().AsSingle();
         Container.BindInterfacesTo<LocationModel>().AsSingle();
 
-        Container.BindInterfacesTo<CharacterViewContainer>().AsSingle();
-        Container.BindInterfacesTo<CharacterViewFactory>().AsSingle();
+        Container.BindInterfacesTo<CharacterMoverContainer>().AsSingle();
+        Container.BindInterfacesTo<CharacterMoverFactory>().AsSingle();
         Container.BindInterfacesTo<CharacterModel>().AsSingle();
         Container.BindInterfacesTo<CharacterCollider>().FromComponentInHierarchy().AsSingle();
         Container.BindInterfacesTo<CharacterInputView>().FromComponentInHierarchy().AsSingle();
-        Container.BindInterfacesTo<CharacterHumanView>().AsSingle();
+        Container.BindInterfacesTo<CharacterView>().AsSingle();
         Container.BindInterfacesTo<CharacterPresenter>().AsSingle();
         Container.BindInterfacesTo<CommandFactory>().AsSingle();
         Container.Bind<CharacterState>().AsSingle();

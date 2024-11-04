@@ -11,6 +11,8 @@ namespace gaw241020.Presenter{
 
         void StopMoveBehavior();
 
+        void SetMoveState(CharacterPresenter.CharacterMoveState moveState);
+
         bool isMoving { get; }
     }
 }

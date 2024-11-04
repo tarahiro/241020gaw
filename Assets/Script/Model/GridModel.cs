@@ -51,7 +51,6 @@ namespace gaw241020.Model
             {
                 if (m_TilemapList[i].GetTile((Vector3Int)position) != null)
                 {
-                    Debug.Log(m_TilemapList[i].GetTile((Vector3Int)position).name);
                     if (UnWalkableTileList.Exists(x => x.name == m_TilemapList[i].GetTile((Vector3Int)position).name))
                     {
                         return false;

@@ -20,8 +20,6 @@ namespace gaw241020.Presenter
         ICharacterInputView m_CharacterInputView;
 
         [Inject]
-        ICharacterViewContainer m_CharacterViewContainer;
-
         ICharacterView m_CharacterView;
 
         ICommand nextCommand;
@@ -33,30 +31,27 @@ namespace gaw241020.Presenter
             Ship
         }
 
-        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, ICharacterInputView characterInputView,ICommandFactory commandFactory, ICharacterViewContainer characterViewContainer)
+        public CharacterPresenter(ICharacterModel characterModel, ICharacterView characterView, ICharacterInputView characterInputView,ICommandFactory commandFactory)
         {
             m_CharacterModel = characterModel;
             m_CharacterInputView = characterInputView;
-            m_CharacterViewContainer = characterViewContainer;
+            m_CharacterView = characterView;
 
             //fake
             m_CharacterModel.EnableCharacterShip();
 
-            InitializeCharacterMoveState(CharacterMoveState.Human);
-            m_CharacterModel.EnteredInLocation.Subscribe(m_CharacterInputView.ShowDecideGuide);
-            m_CharacterModel.ExitedFromLocation.Subscribe(m_CharacterInputView.EraseDecideGuide);
+            InitializeCharacterModel(CharacterMoveState.Human);
         }
 
-        void InitializeCharacterMoveState(CharacterMoveState moveState)
-        {
-            m_CharacterView = m_CharacterViewContainer.GetCharacterView(moveState);
-            InitializeCharacterModel(moveState);
-        }
 
         void InitializeCharacterModel(CharacterMoveState moveState)
         {
-            m_CharacterModel.SetCharacterMoveState(moveState);
+            m_CharacterModel.EnteredInLocation.Subscribe(m_CharacterInputView.ShowDecideGuide);
+            m_CharacterModel.ExitedFromLocation.Subscribe(m_CharacterInputView.EraseDecideGuide);
+            m_CharacterModel.ChangedMoveState.Subscribe(m_CharacterView.SetMoveState);
             m_CharacterModel.Moved.Subscribe(MoveCharacterView);
+
+            m_CharacterModel.SetCharacterMoveState(moveState);
         }
 
         
