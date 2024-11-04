@@ -43,6 +43,11 @@ public class GameStarter : MonoInstaller
         Container.BindInterfacesTo<WarpPresenter>().AsSingle();
         Container.Bind<WarpState>().AsSingle();
 
+        Container.BindInterfacesTo<UnlockModel>().AsSingle();
+        Container.BindInterfacesTo<UnlockPresenter>().AsSingle();
+        Container.Bind<UnlockState>().AsSingle();
+
+
         Container.BindInterfacesTo<StateMachine>().AsSingle();
         Container.BindInterfacesTo<StateChanger>().AsSingle();
         Container.BindInterfacesTo<StateContainerFactory>().AsSingle();

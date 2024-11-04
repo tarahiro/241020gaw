@@ -145,8 +145,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkTown2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">大ヨークの西の果てに、小さな村、ダーナーがある。南にはトレウパ大陸を望むのだが、ここには古くからの言い伝えがある。&#10;人々の騒ぎ声に腹を立てた神が、斧を振り下ろし、大ヨークが大陸から切れてしまったというものである。&#10;なので、ここの住民は息を潜めるように暮らしていて、栄えることがない。</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
-    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Unlock</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Ship</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67"><Data ss:Type="Number">4</Data></Cell>
@@ -186,8 +186,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>8</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>7</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

@@ -18,13 +18,16 @@ namespace gaw241020.State
         [Inject]
         WarpState m_WarpState;
 
+        [Inject]
+        UnlockState m_UnlockState;
+
         IStateContainer m_StateContainer;
 
         public IStateContainer CreateStateContainer()
         {
             Log.DebugAssert(m_StateContainer == null);
 
-           return new StateContainer(m_CharacterState,m_TalkState,m_WarpState);
+           return new StateContainer(m_CharacterState,m_TalkState,m_WarpState,m_UnlockState);
         }
 
 

@@ -37,9 +37,6 @@ namespace gaw241020.Presenter
             m_CharacterInputView = characterInputView;
             m_CharacterView = characterView;
 
-            //fake
-            m_CharacterModel.EnableCharacterShip();
-
             InitializeCharacterModel(CharacterMoveState.Human);
         }
 

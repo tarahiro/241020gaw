@@ -25,6 +25,9 @@ namespace gaw241020.Presenter
         [Inject]
         IWarpModel m_WarpModel;
 
+        [Inject]
+        IUnlockModel m_UnlockModel;
+
         IStateContainer m_StateContainer;
         
         public async UniTask Enter()
@@ -35,12 +38,7 @@ namespace gaw241020.Presenter
 
             if (!m_LocationModel.IsLocationChecked(locationId))
             {
-                Log.DebugLog("LocationModelに" + locationId + "のチェックを通知");
                 m_LocationModel.CheckLocation(locationId);
-            }
-            else
-            {
-                Log.DebugLog("すでに" + locationId + "チェックずみ");
             }
 
             
@@ -59,6 +57,14 @@ namespace gaw241020.Presenter
                         );
                     m_StateChanger.ChangeState(m_StateContainer.GetWarpState);
                     break;
+
+                case "Unlock":
+                    m_UnlockModel.SetUnlockContentId(
+                         m_LocationModel.GetLocationEventId(locationId));
+                    m_StateChanger.ChangeState(m_StateContainer.GetUnlockState);
+                    break;
+
+
 
                 case "None":
                     Log.DebugLog("特になし");
