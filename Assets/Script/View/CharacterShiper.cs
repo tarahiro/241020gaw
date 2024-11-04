@@ -38,7 +38,6 @@ namespace gaw241020.View
 
 
             m_WalkAnimatorController = Resources.Load<RuntimeAnimatorController>("PlayerShip");
-            m_CharacterAnimator.runtimeAnimatorController = m_WalkAnimatorController;
 
             m_DirectionList = new List<Vector2Int>();
 
@@ -50,9 +49,9 @@ namespace gaw241020.View
 
         public bool IsMoving => m_isMoving;
 
-        public void ChangeCharacterDisplay(CharacterPresenter.CharacterMoveState moveState)
+        public void ChangeCharacterDisplay()
         {
-
+            m_CharacterAnimator.runtimeAnimatorController = m_WalkAnimatorController;
         }
         public async UniTask Move(Vector2Int destination)
         {

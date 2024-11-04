@@ -41,6 +41,7 @@ namespace gaw241020.View {
         public void SetMoveState(CharacterPresenter.CharacterMoveState moveState)
         {
             m_CharacterMover = m_CharacterMoverContainer.GetCharacterMover(moveState);
+            m_CharacterMover.ChangeCharacterDisplay();
         }
 
     }

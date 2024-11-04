@@ -12,7 +12,7 @@ namespace gaw241020.View
 {
     public interface ICharacterMover
     {
-        void ChangeCharacterDisplay(CharacterPresenter.CharacterMoveState moveState);
+        void ChangeCharacterDisplay();
 
 
         UniTask Move(Vector2Int destination);

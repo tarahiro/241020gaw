@@ -31,8 +31,9 @@ namespace gaw241020.Presenter{
 
         void SetCharacterMoveState(CharacterPresenter.CharacterMoveState moveState);
 
-        void EnableCharacterShip();
+        CharacterPresenter.CharacterMoveState GetMoveState { get; }
 
+        void EnableCharacterShip();
 
         bool CanCharacterShip { get; }
     }

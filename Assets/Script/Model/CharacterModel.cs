@@ -33,6 +33,7 @@ namespace gaw241020.Model {
         public bool IsTouchingLocationExist => m_TouchedLocationName != "";
 
         public bool CanCharacterShip => m_CanCharacterShip;
+        public CharacterPresenter.CharacterMoveState GetMoveState => m_MoveState;
 
         public CharacterModel()
         {

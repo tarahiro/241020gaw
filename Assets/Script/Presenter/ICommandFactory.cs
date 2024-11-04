@@ -5,7 +5,8 @@ namespace gaw241020.Presenter
 {
     public interface ICommandFactory
     {
-        ICommand CreateMoveCommand(Vector2Int direction);
+        ICommand CreateWalkCommand(Vector2Int direction);
+        ICommand CreateShipCommand(Vector2Int direction);
         ICommand CreateTalkCommand(IState talkState);
 
     }

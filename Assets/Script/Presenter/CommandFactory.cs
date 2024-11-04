@@ -24,9 +24,13 @@ namespace gaw241020.Presenter
         [Inject]
         IStateChanger m_StateChanger;
 
-        public ICommand CreateMoveCommand(Vector2Int direction)
+        public ICommand CreateWalkCommand(Vector2Int direction)
         {
             return new WalkCommand(m_CharacterModel, m_GridModel, m_CharacterView, m_CharacterInputView, direction);
+        }
+        public ICommand CreateShipCommand(Vector2Int direction)
+        {
+            return new ShipCommand(m_CharacterModel, m_GridModel, m_CharacterView, m_CharacterInputView, direction);
         }
 
         public ICommand CreateTalkCommand(IState talkState)

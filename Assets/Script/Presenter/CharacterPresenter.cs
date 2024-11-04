@@ -140,22 +140,22 @@ namespace gaw241020.Presenter
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                nextCommand = m_CommandFactory.CreateMoveCommand(Vector2Int.up);
+                nextCommand = CreateMoveCommand(Vector2Int.up);
                 return true;
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                nextCommand = m_CommandFactory.CreateMoveCommand(Vector2Int.right);
+                nextCommand = CreateMoveCommand(Vector2Int.right);
                 return true;
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                nextCommand = m_CommandFactory.CreateMoveCommand(Vector2Int.down);
+                nextCommand = CreateMoveCommand(Vector2Int.down);
                 return true;
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                nextCommand = m_CommandFactory.CreateMoveCommand(Vector2Int.left);
+                nextCommand = CreateMoveCommand(Vector2Int.left);
                 return true;
             }
             if (Input.GetKeyDown(KeyCode.Z))
@@ -165,6 +165,22 @@ namespace gaw241020.Presenter
             }
             nextCommand = null;
             return false;
+        }
+
+        ICommand CreateMoveCommand(Vector2Int direction)
+        {
+            switch (m_CharacterModel.GetMoveState)
+            {
+                case CharacterMoveState.Human:
+                    return m_CommandFactory.CreateWalkCommand(direction);
+
+                case CharacterMoveState.Ship:
+                    return m_CommandFactory.CreateShipCommand(direction);
+
+                default:
+                    Log.DebugAssert(false);
+                    return null;
+            }
         }
 
         void EndLoop()
