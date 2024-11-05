@@ -7,10 +7,11 @@ using Tarahiro.MasterData;
 
 namespace Tarahiro.Editor.XmlImporter
 {
-    /// <summary>
-    /// Xmlをインポートするための共通処理を実装したクラスです。
-    /// </summary>
-    public static class XmlImporter
+#if UNITY_EDITOR
+	/// <summary>
+	/// Xmlをインポートするための共通処理を実装したクラスです。
+	/// </summary>
+	public static class XmlImporter
     {
 		class Workbook : IWorkbook
 		{
@@ -161,4 +162,5 @@ namespace Tarahiro.Editor.XmlImporter
 			return 0;
 		}
 	}
+#endif
 }

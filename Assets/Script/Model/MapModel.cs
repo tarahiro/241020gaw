@@ -31,6 +31,12 @@ namespace gaw241020.Model
                 Log.DebugLog("Max");
                 maxedMapFillSubject.OnNext(null);
             }
+            else {
+                /*
+                Log.DebugLog("Fake");
+                maxedMapFillSubject.OnNext(null);
+                */
+            }
         }
 
     }

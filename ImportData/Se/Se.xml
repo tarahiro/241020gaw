@@ -16,13 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <SupBook>
-   <Path> </Path>
-   <SheetName> </SheetName>
-  </SupBook>
-  <WindowIconic/>
-  <WindowHeight>10080</WindowHeight>
-  <WindowWidth>28580</WindowWidth>
+  <WindowHeight>7260</WindowHeight>
+  <WindowWidth>21360</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -93,17 +88,17 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="8" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="9" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="90"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
+   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Se.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>
@@ -132,6 +127,12 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(凡例!R2C,Script!RC[-1])"><Data
       ss:Type="String">Sound/SE/Cursor</Data></Cell>
    </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Telop</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(凡例!R2C,Script!RC[-1])"><Data
+      ss:Type="String">Sound/SE/Telop</Data></Cell>
+   </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
    <PageSetup>
@@ -152,8 +153,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>7</ActiveRow>
-     <ActiveCol>10</ActiveCol>
+     <ActiveRow>6</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -166,10 +167,17 @@
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R9C1:R9C3</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
  </Worksheet>
  <Worksheet ss:Name="凡例">
   <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="2" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="52" ss:DefaultRowHeight="18">
+   x:FullRows="1" ss:DefaultColumnWidth="51.75" ss:DefaultRowHeight="18">
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="3" ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>
    </Row>

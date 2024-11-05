@@ -22,11 +22,12 @@ namespace gaw241020
         {
             m_StateMachine = stateMachine;
 
-
             m_StateContainer =  stateContainerFactory.CreateStateContainer();
             m_StateMachine.SetNextState(m_StateContainer.GetCharacterState);
 
             m_StateMachine.Enter().Forget();
+
+            SoundManager.PlayBGM("Field",0);
         }
 
     }

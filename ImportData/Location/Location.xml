@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>11745</WindowHeight>
-  <WindowWidth>24720</WindowWidth>
+  <WindowHeight>7260</WindowHeight>
+  <WindowWidth>21360</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -137,7 +137,9 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">YorkTown2</Data></Cell>
-    <Cell ss:StyleID="s68"><Data ss:Type="String">&quot;大ヨークの西の果てに、小さな村、ダーナーがある。南にはトレウパ大陸を望むのだが、ここには古くからの言い伝えがある。&#10;人々の騒ぎ声に腹を立てた神が、斧を振り下ろしたので、大ヨークが大陸から切れてしまったというものである。&#10;よって、ここの住民は息を潜めるように暮らしていて、栄えることがない。&quot;</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ハナイツタ</PhoneticText><Data
+      ss:Type="String">&quot;大ヨークの西の果てに、小さな村、ダーナーがある。南にはトレウパ大陸を望む。&#10;人々の騒ぎ声に腹を立てた神が、斧によって、大ヨークを大陸から切り離した、という言い伝えがあるので、&#10;ここの住民は息を潜めるように暮らしていて、栄えることがない。&quot;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"/>
    </Row>
@@ -225,44 +227,54 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">12</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqTown1</Data></Cell>
-    <Cell ss:StyleID="s68"><Data ss:Type="String">テリズ</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">タイリクミナミヤマアイチイマチナガタイガツカカンガイヨウイヒトビトタコマ</PhoneticText><Data
+      ss:Type="String">&quot;ゼンクー大陸の南の山合いに、テリズという小さな町がある。&#10; そばを流れる大河を使った灌漑が容易にできるので、&#10; ここの人々は食べることに困ることがない。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"/>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">13</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqTown2</Data></Cell>
-    <Cell ss:StyleID="s68"><Data ss:Type="String">デュカンベ</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ヒガシトシジュウミンセイレイキョウトホカクニセイオトコオンナイマホロノコ</PhoneticText><Data
+      ss:Type="String">&quot;デュカンベは、ゼンクーの東の都市である。&#10; 住民はみな精霊教徒であるから、よく他の国から攻め入られるのだが、&#10; 男はたくましく、女もしたたかであるから、&#10; 今も滅びずに残っている。&quot;&#10; </Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"/>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">14</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqTown3</Data></Cell>
-    <Cell ss:StyleID="s68"><Data ss:Type="String">ガヴァルカンド</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">コウゲンフウコウメイビムラヒトダレウマウシヒツジイヌモミジカクサカチクヨエサ</PhoneticText><Data
+      ss:Type="String">&quot;ガヴァルカンドは、エングリ高原の、風光明媚な村である。&#10; ここの人は、みな誰もが、馬と、牛と、羊と、犬を持っている。&#10; 短い草は、家畜たちの良い餌になる。&quot;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"/>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">15</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqCity1</Data></Cell>
-    <Cell ss:StyleID="s68"><Data ss:Type="String">アサダバード</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">カワダイトシタイガメグウムギタイヘンソダハンランヒトビトジャキョウシンイヒトゾウトダカワカミイカオサ</PhoneticText><Data
+      ss:Type="String">&quot;アサダバードは、ニロネ川のほとりの、たいへんな大都市である。&#10; 大河の恵みを受けて、麦が大変よく育つのだが、しばしば氾濫もする。&#10; 人々はみな邪教を信じていて、生きた人の臓を取り出すことで、&#10; 川の神の怒りを収めようとしている。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"/>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">16</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqCity2</Data></Cell>
-    <Cell ss:StyleID="s68"><Data ss:Type="String">テネチネティラン</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">タイリクチュウオウイチミズウミスイウンスベカレドクセンワタシカタイリクトウブキタマワ</PhoneticText><Data
+      ss:Type="String">&quot;テネチネティランは、ゼンクー大陸の中央に位置する。&#10; ナナララ湖の水運は全て彼らに独占されていて、&#10; 私もカヌーを借りることができなかったので、&#10; ゼンクー大陸東部へは北を周っていかねばならなかった。&#10; </Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"/>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">17</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ZenqCastle1</Data></Cell>
-    <Cell ss:StyleID="s68"><Data ss:Type="String">シェンナイ</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
-    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">&quot;シェンナイは大きい集落だが、あなた方が知っている大都市とは少し違う。&#10; 我々の知っている鉄の道具はないし、かと思えば、見たことのない石の建物がある。&#10; 私は名前の知らない石の乗り物で、東ゼンクーへ移動した。&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Warp</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ToWestZenq</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -284,155 +296,15 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>22</ActiveRow>
-     <ActiveCol>1</ActiveCol>
+     <ActiveRow>6</ActiveRow>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R8C5,R9C1:R9C3</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R10C1:R10C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R11C1:R11C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R12C1:R12C3</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R13C1:R13C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R14C1,R14C3:R14C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R14C2</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R12C4:R12C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R9C4</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R9C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R15C1:R15C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R16C1:R16C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R17C1:R17C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R18C1,R18C3:R18C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R19C1,R19C3:R19C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R20C1:R20C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R21C1,R21C3:R21C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R22C1:R22C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R18C2</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R19C2</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R21C2</Range>
+   <Range>R5C1:R22C5</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

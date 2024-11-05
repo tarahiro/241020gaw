@@ -6,10 +6,11 @@ using UnityEngine;
 
 namespace Tarahiro.Editor.Symbols
 {
+#if UNITY_EDITOR
 	/// <summary>
 	/// シンボルを設定するウィンドウクラスです。
 	/// </summary>
-	internal class SymbolsWindow : EditorWindow
+	internal class SymbolsWindow : UnityEditor.EditorWindow
 	{
 		/// <summary>
 		/// シンボルのデータを管理するクラス
@@ -112,4 +113,5 @@ namespace Tarahiro.Editor.Symbols
 			EditorGUILayout.EndVertical();
 		}
 	}
+#endif
 }

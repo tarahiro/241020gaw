@@ -29,6 +29,14 @@ namespace gaw241020.Presenter
         IUnlockModel m_UnlockModel;
 
         IStateContainer m_StateContainer;
+
+        GameObject m_TalkStateTelopObject;
+
+        public TalkPresenter()
+        {
+            m_TalkStateTelopObject = GameObject.Find("TalkStateTelopObject");
+            m_TalkStateTelopObject.SetActive(false);
+        }
         
         public async UniTask Enter()
         {
@@ -39,12 +47,16 @@ namespace gaw241020.Presenter
             if (!m_LocationModel.IsLocationChecked(locationId))
             {
                 m_LocationModel.CheckLocation(locationId);
+                m_TalkStateTelopObject.SetActive(true);
+                SoundManager.PlaySE("Telop");
             }
 
             
             await m_TalkView.DisplayTalk(
                 m_LocationModel.GetLocationDescription(locationId)
                 );
+
+            m_TalkStateTelopObject.SetActive(false);
 
 
             //ロケーションによって次のState遷移先が異なる
@@ -65,10 +77,8 @@ namespace gaw241020.Presenter
                     break;
 
 
-
                 case "None":
                     Log.DebugLog("特になし");
-                    if(m_StateChanger.)
                     m_StateChanger.ChangeState(m_StateContainer.GetCharacterState);
                     break;
 

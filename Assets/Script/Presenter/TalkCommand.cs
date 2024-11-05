@@ -33,6 +33,7 @@ namespace gaw241020.Presenter
             if (m_CharacterModel.IsTouchingLocationExist)
             {
                 Log.DebugLog(m_CharacterModel.TouchingLocationId);
+                SoundManager.PlaySE("Enter");
                 m_StateChanger.ChangeState(m_TalkState);
                 m_IsEndState = true;
             }

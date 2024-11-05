@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Cysharp.Threading.Tasks;
-using Mono.Cecil;
 using System.Threading;
 
 namespace Tarahiro
