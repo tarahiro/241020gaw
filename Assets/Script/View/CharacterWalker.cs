@@ -59,21 +59,24 @@ namespace gaw241020.View
 
             float walkSecondsPerTile = c_WalkSecondsPerTile;
 
-#if ENABLE_DEBUG
             if (Input.GetKey(KeyCode.LeftShift))
             {
 
-                walkSecondsPerTile /= 5f;
+                walkSecondsPerTile /= 2.5f;
             }
-#endif
-            string directionString = GetMoveDirection((Vector2)destination);
+
+            var MoveVector = destination - (Vector2)m_CharacterTransform.position;
+            var coeff = Mathf.Min(MoveVector.magnitude, 3f);
+            walkSecondsPerTile /= coeff;
+
+            string directionString = GetMoveDirection(MoveVector);
             if (directionString != m_LatestDirectionString)
             {
                 m_LatestDirectionString = directionString;
                 m_CharacterAnimator.SetTrigger(m_LatestDirectionString);
             }
 
-            await LMotion.Create(m_CharacterTransform.position, new Vector3(destination.x, destination.y), walkSecondsPerTile).BindToPosition(m_CharacterTransform);
+            await LMotion.Create(m_CharacterTransform.position, new Vector3(destination.x, destination.y), walkSecondsPerTile * MoveVector.magnitude).BindToPosition(m_CharacterTransform);
 
             EndMove();
         }
@@ -88,9 +91,8 @@ namespace gaw241020.View
             m_LatestDirectionString = "";
         }
 
-        string GetMoveDirection(Vector2 destination)
+        string GetMoveDirection(Vector2 MoveVector)
         {
-            var MoveVector = destination - (Vector2)m_CharacterTransform.position;
 
             List<float> innerProductList = new List<float>();
 

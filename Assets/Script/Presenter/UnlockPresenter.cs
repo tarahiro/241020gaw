@@ -30,6 +30,7 @@ namespace gaw241020.Presenter
             {
                 case "Ship":
                     m_CharacterModel.EnableCharacterShip();
+                    m_CharacterModel.SetCharacterMoveState(CharacterPresenter.CharacterMoveState.Ship);
                     m_UnlockModel.ResetUnlockContentId();
                     break;
 

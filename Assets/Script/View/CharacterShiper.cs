@@ -59,13 +59,13 @@ namespace gaw241020.View
 
             float walkSecondsPerTile = c_WalkSecondsPerTile;
 
-#if ENABLE_DEBUG
+
             if (Input.GetKey(KeyCode.LeftShift))
             {
 
-                walkSecondsPerTile /= 5f;
+                walkSecondsPerTile /= 2.5f;
             }
-#endif
+
             string directionString = GetMoveDirection((Vector2)destination);
             if (directionString != m_LatestDirectionString)
             {
