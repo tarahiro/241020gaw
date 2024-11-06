@@ -4,6 +4,7 @@ using Tarahiro.Sound;
 using Tarahiro.MasterData;
 using UnityEngine;
 using UnityEngine.Audio;
+using Tarahiro;
 
 
 /// <summary>
@@ -32,7 +33,7 @@ public class SoundManager
 
     }
 
-    public static void PlayBGM(string BGMName,int channelId, bool IsLoop = true)
+    public static void PlayBGM(string BGMName,int channelId = 0, bool IsLoop = true)
     {
         SoundMgr.Instance.PlayBGM(Resources.Load<AudioClip>(bgmString + BGMName),channelId, IsLoop);
     }
@@ -348,6 +349,8 @@ public class SoundManager
         public GameObject dummyInstantiate(GameObject obj,AudioClip audioClip,bool Isloop)
         {
             SESource seSource = Instantiate(obj, transform).GetComponent<SESource>();
+
+            Log.DebugAssert(audioClip != null);
             seSource.clip = audioClip;
             seSource.loop = Isloop;
             seSource.Play();
@@ -357,6 +360,8 @@ public class SoundManager
         public GameObject dummyInstantiateBGM(GameObject obj, AudioClip audioClip, bool Isloop)
         {
             AudioSource seSource = Instantiate(obj, transform).GetComponent<AudioSource>();
+
+            Log.DebugAssert(audioClip != null);
             seSource.clip = audioClip;
             seSource.loop = Isloop;
             seSource.Play();

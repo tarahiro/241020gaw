@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using Tarahiro;
+using System;
 
 namespace Tarahiro.MasterData
 {
@@ -27,6 +29,7 @@ namespace Tarahiro.MasterData
 			{
 				return m_List[index];
 			}
+			Log.DebugAssert(index.ToString() + "の値がDictionaryに存在しません");
 			return default;
 		}
 
@@ -36,8 +39,9 @@ namespace Tarahiro.MasterData
 			if (m_Dictionary.ContainsKey(id))
 			{
 				return m_List[m_Dictionary[id]];
-			}
-			return default;
+            }
+            Log.DebugAssert(id + "の値がDictionaryに存在しません");
+            return default;
 		}
 
 		// データの数を取得
