@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
 using Tarahiro;
+using Tarahiro.Text;
 using Zenject;
 
 namespace gaw241020.View

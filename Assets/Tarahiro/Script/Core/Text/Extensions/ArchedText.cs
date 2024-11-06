@@ -6,7 +6,7 @@ using System.Collections;
 using UnityEditor;
 #endif
 
-namespace Tarahiro
+namespace Tarahiro.Text.Extensions
 {
 
 	[ExecuteInEditMode]

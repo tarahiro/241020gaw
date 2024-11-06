@@ -5,9 +5,9 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 
-namespace Tarahiro
+namespace Tarahiro.Text
 {
-    public class TextCounter : MonoBehaviour
+    internal class TextCounter : MonoBehaviour
     {
 
         string m_text = "";
